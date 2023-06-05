@@ -40,6 +40,7 @@
                     "label": "container_map_board",
                     "scope": "CLASS",
                     "components": [],
+                    "visible": false,
                     "list": [
                         {
                             "type": "Rectangle",

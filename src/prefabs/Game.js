@@ -18,6 +18,7 @@ class Game extends Phaser.GameObjects.Container {
 
 		// container_map_board
 		const container_map_board = scene.add.container(0, 0);
+		container_map_board.visible = false;
 		this.add(container_map_board);
 
 		// map_1
