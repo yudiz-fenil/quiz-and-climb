@@ -1,0 +1,178 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "assets/images/gameplay/blue-pawn.png",
+                "type": "image",
+                "key": "blue-pawn"
+            },
+            {
+                "url": "assets/images/gameplay/dice-bg.png",
+                "type": "image",
+                "key": "dice-bg"
+            },
+            {
+                "url": "src/prefabs/Game.js",
+                "type": "script",
+                "key": "Game"
+            },
+            {
+                "url": "assets/images/gameplay/game-background.png",
+                "type": "image",
+                "key": "game-background"
+            },
+            {
+                "url": "assets/images/gameplay/game-board.png",
+                "type": "image",
+                "key": "game-board"
+            },
+            {
+                "url": "assets/images/gameplay/game-timer.png",
+                "type": "image",
+                "key": "game-timer"
+            },
+            {
+                "url": "src/scripts/GameManager.js",
+                "type": "script",
+                "key": "GameManager"
+            },
+            {
+                "url": "assets/images/gameplay/green-pawn.png",
+                "type": "image",
+                "key": "green-pawn"
+            },
+            {
+                "url": "src/scripts/InputManager.js",
+                "type": "script",
+                "key": "InputManager"
+            },
+            {
+                "url": "assets/images/mcq/mcq-bg.png",
+                "type": "image",
+                "key": "mcq-bg"
+            },
+            {
+                "url": "assets/images/gameplay/ping-background.png",
+                "type": "image",
+                "key": "ping-background"
+            },
+            {
+                "url": "assets/images/gameplay/player-avtar-01.png",
+                "type": "image",
+                "key": "player-avtar-01"
+            },
+            {
+                "url": "assets/images/gameplay/player-avtar-02.png",
+                "type": "image",
+                "key": "player-avtar-02"
+            },
+            {
+                "url": "assets/images/gameplay/player-avtar-03.png",
+                "type": "image",
+                "key": "player-avtar-03"
+            },
+            {
+                "url": "assets/images/gameplay/player-avtar-04.png",
+                "type": "image",
+                "key": "player-avtar-04"
+            },
+            {
+                "url": "assets/images/gameplay/player-four-background.png",
+                "type": "image",
+                "key": "player-four-background"
+            },
+            {
+                "url": "assets/images/gameplay/player-four-heart.png",
+                "type": "image",
+                "key": "player-four-heart"
+            },
+            {
+                "url": "assets/images/gameplay/player-one-background.png",
+                "type": "image",
+                "key": "player-one-background"
+            },
+            {
+                "url": "assets/images/gameplay/player-one-heart.png",
+                "type": "image",
+                "key": "player-one-heart"
+            },
+            {
+                "url": "assets/images/gameplay/player-three-background.png",
+                "type": "image",
+                "key": "player-three-background"
+            },
+            {
+                "url": "assets/images/gameplay/player-three-heart.png",
+                "type": "image",
+                "key": "player-three-heart"
+            },
+            {
+                "url": "assets/images/mcq/player-timer-bar.png",
+                "type": "image",
+                "key": "player-timer-bar"
+            },
+            {
+                "url": "assets/images/gameplay/player-two-background.png",
+                "type": "image",
+                "key": "player-two-background"
+            },
+            {
+                "url": "assets/images/gameplay/player-two-heart.png",
+                "type": "image",
+                "key": "player-two-heart"
+            },
+            {
+                "url": "assets/images/gameplay/pot-background.png",
+                "type": "image",
+                "key": "pot-background"
+            },
+            {
+                "url": "assets/images/mcq/question.png",
+                "type": "image",
+                "key": "question"
+            },
+            {
+                "url": "assets/images/mcq/question-answer-bar.png",
+                "type": "image",
+                "key": "question-answer-bar"
+            },
+            {
+                "url": "assets/images/gameplay/red-pawn.png",
+                "type": "image",
+                "key": "red-pawn"
+            },
+            {
+                "url": "assets/images/mcq/right-answer-bar.png",
+                "type": "image",
+                "key": "right-answer-bar"
+            },
+            {
+                "url": "assets/images/gameplay/setting-button.png",
+                "type": "image",
+                "key": "setting-button"
+            },
+            {
+                "url": "src/scripts/SocketManager.js",
+                "type": "script",
+                "key": "SocketManager"
+            },
+            {
+                "url": "src/scripts/SoundManager.js",
+                "type": "script",
+                "key": "SoundManager"
+            },
+            {
+                "url": "assets/images/gameplay/yellow-pawn.png",
+                "type": "image",
+                "key": "yellow-pawn"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}

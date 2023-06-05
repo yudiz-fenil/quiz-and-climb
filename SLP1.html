@@ -1,0 +1,225 @@
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Snakes & Ladders</title>
+    <link rel="stylesheet" href="./SL_files/bootstrap.min.css" />
+    <script src="./SL_files/jquery.min.js"></script>
+    <script src="./SL_files/bootstrap.min.js"></script>
+    <script src="./SL_files/socket.io.js"></script>
+
+    <style>
+      body {
+        background: #e7e7e7;
+        margin: 0;
+        padding: 0;
+      }
+
+      .prelogo {
+        width: auto;
+        height: auto;
+        text-align: center;
+      }
+
+      label {
+        color: #fff;
+        width: 100%;
+      }
+
+      .form-select {
+        text-align: center;
+      }
+
+      .form-grp {
+        display: inline-block;
+        text-align: center;
+      }
+
+      select {
+        text-align: center;
+      }
+
+      .form-group {
+        text-align: center;
+      }
+
+      .form-group input {
+        display: inline-block;
+        width: auto;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body style="background-color: #242424">
+    <div>
+      <div class="container" id="enterform">
+        <center>
+          <img
+            src="./assets/images/background/game-logo.png"
+            alt="Snakes & Ladders Game Logo"
+            width="300"
+            height="300"
+          />
+        </center>
+        <div class="form-group">
+          <label>Device ID</label><br />
+          <input
+            type="text"
+            class="form-control"
+            id="sDeviceID"
+            value="JRO03f"
+            placeholder="Enter Device ID"
+          />
+        </div>
+        <br />
+        <center>
+          <button
+            type="button"
+            class="btn btn-default"
+            onclick="getAuthenticationToken()"
+          >
+            Get Authentication Token
+          </button>
+        </center>
+        <br />
+        <div class="form-group">
+          <label id="sAuthenticationResponse"></label><br />
+        </div>
+        <br />
+        <center>
+          <button
+            type="submit"
+            class="btn btn-default"
+            style="display: none"
+            onclick="getBoardList()"
+            id="boardListButton"
+          >
+            Get Board List
+          </button>
+        </center>
+        <div class="form-select" style="display: none" id="gameData">
+          <div class="form-grp">
+            <label>Select Game</label>
+            <select id="sGameType">
+              <option selected="">Game Type</option>
+            </select>
+          </div>
+        </div>
+        <br />
+        <center>
+          <button
+            type="submit"
+            class="btn btn-default"
+            style="display: none"
+            onclick="joinTablePrototype()"
+            id="joinTableButton"
+          >
+            Join Table Prototype
+          </button>
+        </center>
+      </div>
+    </div>
+
+    <script>
+      const gamePort = 3484;
+      const sRoot = "https://snl-backend.lc.webdevprojects.cloud";
+      const sRootUrl = sRoot + "/api/v1";
+      let sAuthenticationToken = "";
+
+      function getAuthenticationToken() {
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+          sDeviceId: $("#sDeviceID").val(),
+        });
+
+        var requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow",
+        };
+
+        fetch(sRootUrl + "/auth/register-deviceId", requestOptions)
+          .then((response) => response.text())
+          .then((result) => {
+            sAuthenticationToken = JSON.parse(result).data.sToken;
+            $("#sAuthenticationResponse").text("Authentication Token Fetched!");
+            $("#boardListButton").removeAttr("style");
+          })
+          .catch((error) => console.log("AuthToken Error :: ", error));
+      }
+
+      function getBoardList() {
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", sAuthenticationToken);
+
+        var requestOptions = {
+          method: "GET",
+          headers: myHeaders,
+          redirect: "follow",
+        };
+
+        fetch(sRootUrl + "/snakes-and-ladder/board/list", requestOptions)
+          .then((response) => response.text())
+          .then((result) => {
+            $("#gameData").removeAttr("style");
+            let oResult = JSON.parse(result);
+            getTableData(oResult);
+          })
+          .catch((error) => console.log("error", error));
+      }
+
+      function getTableData(oResult) {
+        for (let i = 0; i < oResult.data.length; i++) {
+          $("#sGameType").append(
+            new Option(
+              oResult.data[i].nMaxPlayer +
+                " Players : " +
+                oResult.data[i].nBoardFee +
+                " Fees",
+              oResult.data[i]._id
+            )
+          );
+        }
+        $("#joinTableButton").removeAttr("style");
+      }
+
+      function joinTablePrototype() {
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", sAuthenticationToken);
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+          iProtoId: $("#sGameType").val(),
+        });
+
+        var requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow",
+        };
+
+        fetch(sRootUrl + "/snakes-and-ladder/board/join", requestOptions)
+          .then((response) => response.text())
+          .then((result) => {
+            let oResult = JSON.parse(result);
+            console.log("nBoardID :: ", oResult.data);
+            const gameUrl =
+              "http://127.0.0.1:" + gamePort + "/editor/external/?";
+            var passString = "iBoardId=" + oResult.data.iBoardId + "&";
+            passString =
+              passString + "sAuthToken=" + sAuthenticationToken + "&";
+            passString = passString + "sRootUrl=" + sRoot;
+            window.open(gameUrl + passString, "", "width = 600, height = 1000");
+          })
+          .catch((error) => console.log("error", error));
+      }
+    </script>
+  </body>
+</html>

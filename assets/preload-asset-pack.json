@@ -1,0 +1,23 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "assets/images/background/background.png",
+                "type": "image",
+                "key": "background"
+            },
+            {
+                "url": "assets/images/background/game-logo.png",
+                "type": "image",
+                "key": "game-logo"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}
