@@ -1343,6 +1343,19 @@
                             "height": 90
                         }
                     ]
+                },
+                {
+                    "prefabId": "abcc443b-5aa0-4ca4-9de8-d6c9a0324b15",
+                    "id": "cd55f4a4-1507-43fd-ab60-0f3623abda66",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "playerProfile",
+                    "components": [],
+                    "x": 135,
+                    "y": 1591,
+                    "nestedPrefabs": []
                 }
             ]
         }

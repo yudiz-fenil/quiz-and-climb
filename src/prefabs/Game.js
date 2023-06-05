@@ -721,6 +721,10 @@ class Game extends Phaser.GameObjects.Container {
 		map_100.lineWidth = 3;
 		container_map_board.add(map_100);
 
+		// playerProfile
+		const playerProfile = new PlayerProfile(scene, 135, 1591);
+		this.add(playerProfile);
+
 		this.container_map_board = container_map_board;
 
 		/* START-USER-CTR-CODE */

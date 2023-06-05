@@ -1,0 +1,19 @@
+{
+    "id": "5c3f98ff-7d4b-423e-9289-cd62c8e531fd",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1080,
+        "borderHeight": 1920
+    },
+    "displayList": [],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

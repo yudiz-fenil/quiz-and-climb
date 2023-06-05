@@ -122,6 +122,11 @@
                 "key": "player-two-heart"
             },
             {
+                "url": "src/prefabs/PlayerProfile.js",
+                "type": "script",
+                "key": "PlayerProfile"
+            },
+            {
                 "url": "assets/images/gameplay/pot-background.png",
                 "type": "image",
                 "key": "pot-background"
@@ -135,6 +140,11 @@
                 "url": "assets/images/mcq/question-answer-bar.png",
                 "type": "image",
                 "key": "question-answer-bar"
+            },
+            {
+                "url": "src/prefabs/Quiz.js",
+                "type": "script",
+                "key": "Quiz"
             },
             {
                 "url": "assets/images/gameplay/red-pawn.png",
