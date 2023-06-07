@@ -17,6 +17,11 @@
                 "key": "blue-pawn"
             },
             {
+                "url": "assets/images/gameplay/box-answer.png",
+                "type": "image",
+                "key": "box-answer"
+            },
+            {
                 "url": "assets/images/mcq/Box-Pop-Up.png",
                 "type": "image",
                 "key": "Box-Pop-Up"

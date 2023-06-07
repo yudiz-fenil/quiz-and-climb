@@ -8,8 +8,8 @@ class Level extends Phaser.Scene {
 		super("Level");
 
 		/* START-USER-CTR-CODE */
-    // Write your code here.
-    /* END-USER-CTR-CODE */
+		// Write your code here.
+		/* END-USER-CTR-CODE */
 	}
 
 	/** @returns {void} */
@@ -60,35 +60,39 @@ class Level extends Phaser.Scene {
 
 	/* START-USER-CODE */
 
-  // Write more your code here
+	// Write more your code here
 
-  create() {
-    this.editorCreate();
-    this.oQuizeManager = new QuizeManager(this);
-    this.oInputManager = new InputManager(this);
-    this.oPlayerManager = new PlayerManager(this);
-    this.oGameManager = new GameManager(this);
-    this.instantiateSocketManager();
-  }
+	create() {
+		this.editorCreate();
+		this.oQuizeManager = new QuizeManager(this);
+		this.oInputManager = new InputManager(this);
+		this.oPlayerManager = new PlayerManager(this);
+		this.oGameManager = new GameManager(this);
+		this.instantiateSocketManager();
+	}
 
-  instantiateSocketManager() {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const iBoardId = urlParams.get("iBoardId");
-    const sAuthToken = urlParams.get("sAuthToken");
-    const sRootUrl = urlParams.get("sRootUrl");
-    this.oSocketManager = new SocketManager(
-      this,
-      iBoardId,
-      sAuthToken,
-      sRootUrl
-    );
-  }
-  sendAnswerData(ansId1) {
-    console.log("ansId", ansId1, this.oQuizeManager.questionId, this.oGameManager.iBoardId);
-    this.oSocketManager.socket.emit(this.oGameManager.iBoardId,{sEventName: "reqAnswer", oData : {questId: this.oQuizeManager.questionId, ansId: ansId1 }})
-  }
-  /* END-USER-CODE */
+	instantiateSocketManager = () => {
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		const iBoardId = urlParams.get("iBoardId");
+		const sAuthToken = urlParams.get("sAuthToken");
+		const sRootUrl = urlParams.get("sRootUrl");
+		this.oSocketManager = new SocketManager(
+			this,
+			iBoardId,
+			sAuthToken,
+			sRootUrl
+		);
+	}
+	reqAnswer = (iOptionId) => {
+		console.log("iOptionId", iOptionId, this.oQuizeManager.questionId);
+		this.oSocketManager.emit("reqAnswer", { iOptionId: iOptionId, iQuestionId: this.oQuizeManager.questionId });
+	}
+
+	reqRollDice = () => {
+		this.oSocketManager.emit("reqRollDice");
+	}
+	/* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */

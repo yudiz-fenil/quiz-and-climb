@@ -66,17 +66,18 @@ class SocketManager {
       //   break;
 
       case "resQuestionTurn":
-        console.log("resQuestionTurn :: ", data);
-        this.oScene.container_quiz.visible = true;
+        // console.log("resQuestionTurn :: ", data);
+        this.oScene.oPlayerManager.setQuestionTurn(data.oData);
         break;
 
       case "resQuestion":
-        console.log("resQuestion :: ", data);
+        // console.log("resQuestion :: ", data);
         this.oScene.oQuizeManager.setQuize(data.oData.emitData);
         break;
 
       case "resTurnMissed":
-        console.log("resTurnMissed :: ", data);
+        console.log("%cresTurnMissed :: ", "background: red", data);
+        this.oScene.oPlayerManager.setTurnMissed(data.oData);
         break;
     }
   }

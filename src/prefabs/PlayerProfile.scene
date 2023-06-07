@@ -23,7 +23,8 @@
                     "components": [],
                     "texture": {
                         "key": "player-one-background"
-                    }
+                    },
+                    "y": 2
                 },
                 {
                     "type": "Image",
@@ -35,7 +36,7 @@
                         "key": "player-avtar-01"
                     },
                     "x": -141,
-                    "y": -23,
+                    "y": -22,
                     "scaleX": 0.5,
                     "scaleY": 0.5
                 },
@@ -46,7 +47,7 @@
                     "scope": "CLASS",
                     "components": [],
                     "x": -198,
-                    "y": 80,
+                    "y": 81,
                     "originY": 0.5,
                     "text": "username",
                     "fontSize": "26px"
@@ -99,7 +100,7 @@
                     "scope": "CLASS",
                     "components": [],
                     "x": 37,
-                    "y": 10,
+                    "y": 11,
                     "list": [
                         {
                             "type": "Text",
@@ -130,9 +131,45 @@
                     ]
                 },
                 {
+                    "type": "Container",
+                    "id": "dd5c925c-935b-4cdf-9420-875d6d6f63a5",
+                    "label": "container_answer_question",
+                    "scope": "CLASS",
+                    "components": [],
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "27e05e52-6d98-45a7-b6de-66fb9fa272db",
+                            "label": "box_answer",
+                            "components": [],
+                            "texture": {
+                                "key": "box-answer"
+                            },
+                            "x": -82,
+                            "y": -125,
+                            "scaleX": 1.2,
+                            "scaleY": 1.2
+                        },
+                        {
+                            "type": "Text",
+                            "id": "986dc525-19d5-4fc0-af4e-093ad471bf63",
+                            "label": "text_username_1",
+                            "scope": "CLASS",
+                            "components": [],
+                            "x": -212,
+                            "y": -134,
+                            "originY": 0.5,
+                            "text": "Answering Question",
+                            "fontSize": "24px"
+                        }
+                    ]
+                },
+                {
                     "type": "Image",
                     "id": "60740a92-08c2-414e-a934-90da8aa076b0",
-                    "label": "green_pawn",
+                    "label": "pawn",
+                    "scope": "CLASS",
                     "components": [],
                     "texture": {
                         "key": "green-pawn"
