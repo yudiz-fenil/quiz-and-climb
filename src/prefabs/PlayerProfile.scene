@@ -14,32 +14,131 @@
             "id": "4770c1c2-ad02-435b-ab28-677d09166373",
             "label": "container_1",
             "components": [],
-            "x": -120,
-            "y": -42,
             "list": [
                 {
                     "type": "Image",
                     "id": "83eb4398-0200-4c07-a020-e1de782bdff2",
-                    "label": "player_four_background",
+                    "label": "player_background",
+                    "scope": "CLASS",
                     "components": [],
                     "texture": {
-                        "key": "player-four-background"
-                    },
-                    "x": 120,
-                    "y": 42
+                        "key": "player-one-background"
+                    }
                 },
                 {
                     "type": "Image",
                     "id": "72bb1297-4ad2-4973-ac54-ca6804f6c3e3",
-                    "label": "player_avtar_01",
+                    "label": "player_picture",
+                    "scope": "CLASS",
                     "components": [],
                     "texture": {
                         "key": "player-avtar-01"
                     },
-                    "x": -24,
-                    "y": 15,
+                    "x": -141,
+                    "y": -23,
                     "scaleX": 0.5,
                     "scaleY": 0.5
+                },
+                {
+                    "type": "Text",
+                    "id": "c1f5cc5d-705c-406c-a385-94fc0ddeb39a",
+                    "label": "text_username",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": -198,
+                    "y": 80,
+                    "originY": 0.5,
+                    "text": "username",
+                    "fontSize": "26px"
+                },
+                {
+                    "type": "Container",
+                    "id": "ea9f7350-e306-4b6c-814c-499e37399c42",
+                    "label": "container_heart",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 170,
+                    "y": -24,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "64351d16-56a9-4018-8a55-b526147f9e2c",
+                            "label": "heart_1",
+                            "components": [],
+                            "texture": {
+                                "key": "player-one-heart"
+                            },
+                            "y": 46
+                        },
+                        {
+                            "type": "Image",
+                            "id": "deb33f9a-17f1-42f1-a2a6-fc1735b8be96",
+                            "label": "heart_2",
+                            "components": [],
+                            "texture": {
+                                "key": "player-one-heart"
+                            },
+                            "y": 1
+                        },
+                        {
+                            "type": "Image",
+                            "id": "83bb37a1-cc57-4866-b80c-5bf7da0f4d44",
+                            "label": "heart_3",
+                            "components": [],
+                            "texture": {
+                                "key": "player-one-heart"
+                            },
+                            "y": -43
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "d852c5f0-abc9-4a34-b80c-192758b9606b",
+                    "label": "container_score",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 37,
+                    "y": 10,
+                    "list": [
+                        {
+                            "type": "Text",
+                            "id": "911c6afc-dde5-4de9-be37-0c4a11356cc4",
+                            "label": "text_1",
+                            "components": [],
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "Score",
+                            "align": "center",
+                            "fontSize": "56px",
+                            "fontStyle": "bold"
+                        },
+                        {
+                            "type": "Text",
+                            "id": "85548b1f-6db9-4da0-9e32-69cee67fb376",
+                            "label": "text_score",
+                            "scope": "CLASS",
+                            "components": [],
+                            "y": -60,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "0",
+                            "align": "center",
+                            "fontSize": "76px",
+                            "fontStyle": "bold"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "60740a92-08c2-414e-a934-90da8aa076b0",
+                    "label": "green_pawn",
+                    "components": [],
+                    "texture": {
+                        "key": "green-pawn"
+                    },
+                    "x": 144,
+                    "y": 75
                 }
             ]
         }

@@ -64,6 +64,28 @@
                     "nestedPrefabs": []
                 }
             ]
+        },
+        {
+            "prefabId": "3346544b-bc47-4bde-9f7b-fbefae50a087",
+            "id": "f678b794-5f79-41a4-ab47-d68d180b9b74",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "dice",
+            "scope": "CLASS",
+            "components": [],
+            "x": 540,
+            "y": 1633,
+            "nestedPrefabs": []
+        },
+        {
+            "type": "Container",
+            "id": "6cc9e7fa-90d3-4f3e-9b32-093997c4ce72",
+            "label": "container_players",
+            "scope": "CLASS",
+            "components": [],
+            "list": []
         }
     ],
     "plainObjects": [],

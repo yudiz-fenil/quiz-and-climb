@@ -4,48 +4,61 @@
 
 class Level extends Phaser.Scene {
 
-  constructor() {
-    super("Level");
+	constructor() {
+		super("Level");
 
-    /* START-USER-CTR-CODE */
+		/* START-USER-CTR-CODE */
     // Write your code here.
     /* END-USER-CTR-CODE */
-  }
+	}
 
-  /** @returns {void} */
-  editorCreate() {
+	/** @returns {void} */
+	editorCreate() {
 
-    // container_background
-    const container_background = this.add.container(540, 960);
+		// container_background
+		const container_background = this.add.container(540, 960);
 
-    // game_background
-    const game_background = this.add.image(0, 0, "game-background");
-    container_background.add(game_background);
+		// game_background
+		const game_background = this.add.image(0, 0, "game-background");
+		container_background.add(game_background);
 
-    // game
-    const game = new Game(this, 0, 0);
-    this.add.existing(game);
+		// game
+		const game = new Game(this, 0, 0);
+		this.add.existing(game);
 
-    // container_quiz
-    const container_quiz = this.add.container(0, 0);
-    container_quiz.visible = false;
+		// container_quiz
+		const container_quiz = this.add.container(0, 0);
+		container_quiz.visible = false;
 
-    // quiz
-    const quiz = new Quiz(this, 535, 1002);
-    container_quiz.add(quiz);
+		// quiz
+		const quiz = new Quiz(this, 535, 1002);
+		container_quiz.add(quiz);
 
-    this.container_quiz = container_quiz;
-    this.quiz = quiz;
+		// dice
+		const dice = new Dice(this, 540, 1633);
+		this.add.existing(dice);
 
-    this.events.emit("scene-awake");
-  }
+		// container_players
+		const container_players = this.add.container(0, 0);
 
-  /** @type {Phaser.GameObjects.Container} */
-  container_quiz;
-  /** @type {Quiz} */
-  quiz;
+		this.container_quiz = container_quiz;
+		this.quiz = quiz;
+		this.dice = dice;
+		this.container_players = container_players;
 
-  /* START-USER-CODE */
+		this.events.emit("scene-awake");
+	}
+
+	/** @type {Phaser.GameObjects.Container} */
+	container_quiz;
+	/** @type {Quiz} */
+	quiz;
+	/** @type {Dice} */
+	dice;
+	/** @type {Phaser.GameObjects.Container} */
+	container_players;
+
+	/* START-USER-CODE */
 
   // Write more your code here
 
@@ -53,6 +66,7 @@ class Level extends Phaser.Scene {
     this.editorCreate();
     this.oQuizeManager = new QuizeManager(this);
     this.oInputManager = new InputManager(this);
+    this.oPlayerManager = new PlayerManager(this);
     this.oGameManager = new GameManager(this);
     this.instantiateSocketManager();
   }

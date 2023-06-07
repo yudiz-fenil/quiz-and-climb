@@ -50,19 +50,20 @@ class SocketManager {
   }
 
   onReceivedTableData(data) {
-    console.log('cb',data);
+    console.log('cb', data);
+    this.oScene.oGameManager.setGameData(data.oData);
   }
   onReceivedData(data) {
     switch (data.sEventName) {
       case "resUserJoined":
-        console.log("resUserJoined :: ", data);
+        this.oScene.oPlayerManager.setUserData(data.oData);
         break;
-      case "resGameInitializeTimer":
-        console.log("resGameInitializeTimer :: ", data);
-        break;
-      case "resGameInitializeTimerExpired":
-        console.log("resGameInitializeTimerExpired :: ", data);
-        break;
+      // case "resGameInitializeTimer":
+      //   console.log("resGameInitializeTimer :: ", data);
+      //   break;
+      // case "resGameInitializeTimerExpired":
+      //   console.log("resGameInitializeTimerExpired :: ", data);
+      //   break;
 
       case "resQuestionTurn":
         console.log("resQuestionTurn :: ", data);

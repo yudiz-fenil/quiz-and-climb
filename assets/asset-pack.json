@@ -2,6 +2,16 @@
     "section1": {
         "files": [
             {
+                "url": "assets/images/gameplay/dice/back-box-1.png",
+                "type": "image",
+                "key": "back-box-1"
+            },
+            {
+                "url": "assets/images/gameplay/dice/blue-bg.png",
+                "type": "image",
+                "key": "blue-bg"
+            },
+            {
                 "url": "assets/images/gameplay/blue-pawn.png",
                 "type": "image",
                 "key": "blue-pawn"
@@ -12,9 +22,50 @@
                 "key": "Box-Pop-Up"
             },
             {
+                "url": "assets/images/gameplay/dice/dice.png",
+                "frameConfig": {
+                    "frameWidth": 170,
+                    "frameHeight": 170,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "dice"
+            },
+            {
+                "url": "src/prefabs/Dice.js",
+                "type": "script",
+                "key": "Dice"
+            },
+            {
+                "url": "assets/animations/dice.json",
+                "type": "animation",
+                "key": "dice_1"
+            },
+            {
                 "url": "assets/images/gameplay/dice-bg.png",
                 "type": "image",
                 "key": "dice-bg"
+            },
+            {
+                "url": "assets/images/gameplay/dice/dice-bg.png",
+                "type": "image",
+                "key": "dice-bg_1"
+            },
+            {
+                "url": "assets/images/gameplay/dice/diceRoll.png",
+                "frameConfig": {
+                    "frameWidth": 170,
+                    "frameHeight": 170,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "diceRoll"
             },
             {
                 "url": "src/prefabs/Game.js",
@@ -42,6 +93,11 @@
                 "key": "GameManager"
             },
             {
+                "url": "assets/images/gameplay/dice/green-bg.png",
+                "type": "image",
+                "key": "green-bg"
+            },
+            {
                 "url": "assets/images/gameplay/green-pawn.png",
                 "type": "image",
                 "key": "green-pawn"
@@ -50,11 +106,6 @@
                 "url": "src/scripts/InputManager.js",
                 "type": "script",
                 "key": "InputManager"
-            },
-            {
-                "url": "assets/images/mcq/mcq-bg.png",
-                "type": "image",
-                "key": "mcq-bg"
             },
             {
                 "url": "assets/images/mcq/MCQ-Question-Answer-box.png",
@@ -132,6 +183,11 @@
                 "key": "player-two-heart"
             },
             {
+                "url": "src/scripts/PlayerManager.js",
+                "type": "script",
+                "key": "PlayerManager"
+            },
+            {
                 "url": "src/prefabs/PlayerProfile.js",
                 "type": "script",
                 "key": "PlayerProfile"
@@ -140,16 +196,6 @@
                 "url": "assets/images/gameplay/pot-background.png",
                 "type": "image",
                 "key": "pot-background"
-            },
-            {
-                "url": "assets/images/mcq/question.png",
-                "type": "image",
-                "key": "question"
-            },
-            {
-                "url": "assets/images/mcq/question-answer-bar.png",
-                "type": "image",
-                "key": "question-answer-bar"
             },
             {
                 "url": "src/prefabs/Quiz.js",
@@ -162,14 +208,14 @@
                 "key": "QuizeManager"
             },
             {
+                "url": "assets/images/gameplay/dice/red-bg.png",
+                "type": "image",
+                "key": "red-bg"
+            },
+            {
                 "url": "assets/images/gameplay/red-pawn.png",
                 "type": "image",
                 "key": "red-pawn"
-            },
-            {
-                "url": "assets/images/mcq/right-answer-bar.png",
-                "type": "image",
-                "key": "right-answer-bar"
             },
             {
                 "url": "assets/images/gameplay/setting-button.png",
@@ -185,6 +231,16 @@
                 "url": "src/scripts/SoundManager.js",
                 "type": "script",
                 "key": "SoundManager"
+            },
+            {
+                "url": "assets/images/gameplay/dice/timer.png",
+                "type": "image",
+                "key": "timer"
+            },
+            {
+                "url": "assets/images/gameplay/dice/yellow-bg.png",
+                "type": "image",
+                "key": "yellow-bg"
             },
             {
                 "url": "assets/images/gameplay/yellow-pawn.png",
