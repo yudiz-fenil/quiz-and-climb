@@ -7,6 +7,11 @@
                 "key": "blue-pawn"
             },
             {
+                "url": "assets/images/mcq/Box-Pop-Up.png",
+                "type": "image",
+                "key": "Box-Pop-Up"
+            },
+            {
                 "url": "assets/images/gameplay/dice-bg.png",
                 "type": "image",
                 "key": "dice-bg"
@@ -50,6 +55,11 @@
                 "url": "assets/images/mcq/mcq-bg.png",
                 "type": "image",
                 "key": "mcq-bg"
+            },
+            {
+                "url": "assets/images/mcq/MCQ-Question-Answer-box.png",
+                "type": "image",
+                "key": "MCQ-Question-Answer-box"
             },
             {
                 "url": "assets/images/gameplay/ping-background.png",
@@ -145,6 +155,11 @@
                 "url": "src/prefabs/Quiz.js",
                 "type": "script",
                 "key": "Quiz"
+            },
+            {
+                "url": "src/scripts/QuizeManager.js",
+                "type": "script",
+                "key": "QuizeManager"
             },
             {
                 "url": "assets/images/gameplay/red-pawn.png",

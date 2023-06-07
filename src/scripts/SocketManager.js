@@ -4,7 +4,7 @@ class SocketManager {
     this.sRootUrl = sRootUrl;
     this.iBoardId = iBoardId;
     this.sAuthToken = sAuthToken;
-
+    this.oScene.oGameManager.iBoardId = this.iBoardId;
     //Root Socket conenction
     this.socket = io(this.sRootUrl, {
       transports: ["websocket", "polling"],
@@ -30,7 +30,6 @@ class SocketManager {
     });
     // Root Socket Connection Events - End
 
-    // Refresh Purpose
     this.socket.on(this.iBoardId, (data) => {
       this.onReceivedData(data);
     });
@@ -39,9 +38,8 @@ class SocketManager {
     this.socket.emit(
       "reqJoinBoard",
       { iBoardId: this.iBoardId },
-      (error, data) => {
-        this.onReceivedData(data);
-        this.onReceivedTableData(error);
+      (callback) => {
+        this.onReceivedTableData(callback);
       }
     );
 
@@ -52,38 +50,33 @@ class SocketManager {
   }
 
   onReceivedTableData(data) {
-    console.log(data);
+    console.log('cb',data);
   }
   onReceivedData(data) {
-    console.log(data);
-    // switch (data.sEventName) {
-    //   case undefined:
-    //     console.log(data);
-    //     break;
+    switch (data.sEventName) {
+      case "resUserJoined":
+        console.log("resUserJoined :: ", data);
+        break;
+      case "resGameInitializeTimer":
+        console.log("resGameInitializeTimer :: ", data);
+        break;
+      case "resGameInitializeTimerExpired":
+        console.log("resGameInitializeTimerExpired :: ", data);
+        break;
 
-    //   case "resUserJoined":
-    //     console.log("resUserJoined :: ", data);
-    //     break;
+      case "resQuestionTurn":
+        console.log("resQuestionTurn :: ", data);
+        this.oScene.container_quiz.visible = true;
+        break;
 
-    //   case "resGameInitializeTimer":
-    //     console.log("resGameInitializeTimer :: ", data);
-    //     break;
+      case "resQuestion":
+        console.log("resQuestion :: ", data);
+        this.oScene.oQuizeManager.setQuize(data.oData.emitData);
+        break;
 
-    //   case "resGameInitializeTimerExpired":
-    //     console.log("resGameInitializeTimerExpired :: ", data);
-    //     break;
-
-    //   case "resQuestionTurn":
-    //     console.log("resQuestionTurn :: ", data);
-    //     break;
-
-    //   case "resQuestion":
-    //     console.log("resQuestion :: ", data);
-    //     break;
-
-    //   case "resTurnMissed":
-    //     console.log("resTurnMissed :: ", data);
-    //     break;
-    // }
+      case "resTurnMissed":
+        console.log("resTurnMissed :: ", data);
+        break;
+    }
   }
 }

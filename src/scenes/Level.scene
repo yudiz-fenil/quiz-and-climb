@@ -40,6 +40,30 @@
             "x": 0,
             "y": 0,
             "nestedPrefabs": []
+        },
+        {
+            "type": "Container",
+            "id": "c41f3f72-3754-4a9e-8ae7-7753eebeacde",
+            "label": "container_quiz",
+            "scope": "CLASS",
+            "components": [],
+            "visible": false,
+            "list": [
+                {
+                    "prefabId": "5c3f98ff-7d4b-423e-9289-cd62c8e531fd",
+                    "id": "26186da5-0462-45c5-bb56-ffc6112e8e45",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "quiz",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 535,
+                    "y": 1002,
+                    "nestedPrefabs": []
+                }
+            ]
         }
     ],
     "plainObjects": [],
