@@ -14,5 +14,14 @@ class InputManager {
         this.oScene.quiz.optionFourBox.setInteractive().on('pointerdown', () => {
             this.oScene.sendAnswerData(4)
         });
+
+        // Dice
+        this.oScene.dice.dice.setInteractive().on('pointerdown', () => {
+            this.oScene.dice.dice.anims.play("dice-roll", true).on('animationcomplete', () => {
+                // this.oScene.
+                this.oScene.dice.dice.disableInteractive();
+                this.oScene.dice.dice.setTexture("dice", 5);
+            });
+        });
     }
 }
