@@ -55,23 +55,22 @@ class SocketManager {
   }
 
   onReceivedData(data) {
-    console.log(data.sEventName, data)
+    console.log(data.sEventName , data);
     switch (data.sEventName) {
       case "resUserJoined":
         this.oScene.oPlayerManager.setUserData(data.oData);
         break;
-      // case "resGameInitializeTimer":
-      //   console.log("resGameInitializeTimer :: ", data);
-      //   break;
-      // case "resGameInitializeTimerExpired":
-      //   console.log("resGameInitializeTimerExpired :: ", data);
-      //   break;
-
+      case "resGameInitializeTimer":
+        console.log("resGameInitializeTimer :: ", data);
+        break;
+      case "resGameInitializeTimerExpired":
+        console.log("resGameInitializeTimerExpired :: ", data);
+        break;
       case "resQuestionTurn":
         // console.log("resQuestionTurn :: ", data);
         this.oScene.oPlayerManager.setQuestionTurn(data.oData);
+        this.oScene.setQuestonTimer(data.oData);
         break;
-
       case "resQuestion":
         // console.log("resQuestion :: ", data);
         this.oScene.oQuizeManager.setQuize(data.oData.emitData);

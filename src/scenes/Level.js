@@ -84,12 +84,36 @@ class Level extends Phaser.Scene {
 			sRootUrl
 		);
 	}
-	
+
 	reqAnswer = (iOptionId) => {
 		this.oSocketManager.emit('reqAnswer', { iOptionId: iOptionId, iQuestionId: this.oQuizeManager.questionId });
 	}
 
-	reqRollDice = () => this.oSocketManager.emit("reqRollDice");
+	reqRollDice = () => {
+		this.oSocketManager.emit("reqRollDice");
+	}
+	setQuestonTimer = ({ nTotalTurnTime, ttl }) => {
+		this.time1 = ttl / 1000
+		this.energyContainer = this.add.sprite(551, 776, "Green-Time-bar-inside-fill");
+		this.container_quiz.add(this.energyContainer);
+		this.energyBar = this.add.sprite(this.energyContainer.x + 3, this.energyContainer.y, "Green-Tima-bar-fill");
+		this.container_quiz.add(this.energyBar);
+		this.energyBarMask = this.add.sprite(this.energyContainer.x + 3, this.energyContainer.y, "Green-Tima-bar-fill");
+		this.container_quiz.add(this.energyBarMask);
+		this.energyBarMask.visible = false;
+		this.energyBar.mask = new Phaser.Display.Masks.BitmapMask(this, this.energyBarMask);
+		this.gameTimer = this.time.addEvent({
+			delay: 700,
+			callback: function() {
+				this.timeLeft--;
+				this.stepWidth = this.energyBarMask.displayWidth / this.time1;
+				this.energyBarMask.x -= this.stepWidth;
+			},
+			callbackScope : this,
+			loop : true
+		});
+
+	}
 	/* END-USER-CODE */
 }
 
