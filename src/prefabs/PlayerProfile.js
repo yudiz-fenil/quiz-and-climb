@@ -7,8 +7,15 @@ class PlayerProfile extends Phaser.GameObjects.Container {
 	constructor(scene, x, y) {
 		super(scene, x ?? 0, y ?? 0);
 
+		// player_shadow
+		const player_shadow = scene.add.sprite(0, 0, "green-shadow", 0);
+		player_shadow.scaleX = 0.46;
+		player_shadow.scaleY = 0.6;
+		player_shadow.visible = false;
+		this.add(player_shadow);
+
 		// player_background
-		const player_background = scene.add.image(0, 2, "player-one-background");
+		const player_background = scene.add.image(0, 0, "player-one-background");
 		this.add(player_background);
 
 		// player_picture
@@ -80,6 +87,7 @@ class PlayerProfile extends Phaser.GameObjects.Container {
 		const pawn = scene.add.image(144, 75, "green-pawn");
 		this.add(pawn);
 
+		this.player_shadow = player_shadow;
 		this.player_background = player_background;
 		this.player_picture = player_picture;
 		this.text_username = text_username;
@@ -95,6 +103,8 @@ class PlayerProfile extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
+	/** @type {Phaser.GameObjects.Sprite} */
+	player_shadow;
 	/** @type {Phaser.GameObjects.Image} */
 	player_background;
 	/** @type {Phaser.GameObjects.Image} */
@@ -117,9 +127,6 @@ class PlayerProfile extends Phaser.GameObjects.Container {
 	/* START-USER-CODE */
 
 	// Write your code here.
-	nTotalPlayers = 2;
-
-
 	setRightSidePLayer = () => {
 		this.container_heart.setX(-170);
 		this.player_picture.setX(141);
@@ -128,10 +135,11 @@ class PlayerProfile extends Phaser.GameObjects.Container {
 		this.text_username.setX(198);
 		this.pawn.setX(-144);
 	};
-	setPlayerUI = (background, profile, heartTexture, pawnTexture) => {
+	setPlayerUI = (background, profile, heartTexture, pawnTexture, shadowTexture) => {
 		this.player_background.setTexture(background);
 		this.player_picture.setTexture(profile);
 		this.pawn.setTexture(pawnTexture);
+		this.player_shadow.setTexture(shadowTexture, 0);
 		this.container_heart.list.forEach((heart) => {
 			heart.setTexture(heartTexture);
 		});
@@ -143,11 +151,18 @@ class PlayerProfile extends Phaser.GameObjects.Container {
 	};
 	setScore = (score) => this.text_score.setText(score);
 	setHealth = (nTurnMissed) => {
-		console.log("nTurnMissed Count", nTurnMissed);
 		for (let i = 0; i < nTurnMissed; i++) {
 			this.container_heart.list[i].setVisible(false);
 		}
 	};
+	playShadowAnimation = (key) => {
+		this.player_shadow.setVisible(true);
+		this.player_shadow.anims.play(key, true);
+	}
+	stopShadowAnimation = () => {
+		this.player_shadow.setVisible(false);
+		this.player_shadow.anims.stop();
+	}
 
 	/* END-USER-CODE */
 }

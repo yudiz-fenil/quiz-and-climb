@@ -84,14 +84,12 @@ class Level extends Phaser.Scene {
 			sRootUrl
 		);
 	}
+	
 	reqAnswer = (iOptionId) => {
-		console.log("iOptionId", iOptionId, this.oQuizeManager.questionId);
-		this.oSocketManager.emit("reqAnswer", { iOptionId: iOptionId, iQuestionId: this.oQuizeManager.questionId });
+		this.oSocketManager.emit('reqAnswer', { iOptionId: iOptionId, iQuestionId: this.oQuizeManager.questionId });
 	}
 
-	reqRollDice = () => {
-		this.oSocketManager.emit("reqRollDice");
-	}
+	reqRollDice = () => this.oSocketManager.emit("reqRollDice");
 	/* END-USER-CODE */
 }
 

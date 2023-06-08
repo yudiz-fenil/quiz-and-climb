@@ -16,6 +16,20 @@
             "components": [],
             "list": [
                 {
+                    "type": "Sprite",
+                    "id": "5d65c7d2-a90d-45a5-8fa5-fe601634202c",
+                    "label": "player_shadow",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "green-shadow",
+                        "frame": 0
+                    },
+                    "scaleX": 0.46,
+                    "scaleY": 0.6,
+                    "visible": false
+                },
+                {
                     "type": "Image",
                     "id": "83eb4398-0200-4c07-a020-e1de782bdff2",
                     "label": "player_background",
@@ -23,8 +37,7 @@
                     "components": [],
                     "texture": {
                         "key": "player-one-background"
-                    },
-                    "y": 2
+                    }
                 },
                 {
                     "type": "Image",
