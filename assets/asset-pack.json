@@ -43,6 +43,11 @@
                 "key": "blue-shadow-2"
             },
             {
+                "url": "assets/images/mcq/Blue-time-bar-fill.png",
+                "type": "image",
+                "key": "Blue-time-bar-fill"
+            },
+            {
                 "url": "assets/images/gameplay/box-answer.png",
                 "type": "image",
                 "key": "box-answer"
@@ -158,6 +163,16 @@
                 },
                 "type": "spritesheet",
                 "key": "green-shadow-2"
+            },
+            {
+                "url": "assets/images/mcq/Green-Tima-bar-fill.png",
+                "type": "image",
+                "key": "Green-Tima-bar-fill"
+            },
+            {
+                "url": "assets/images/mcq/Green-Time-bar-inside-fill.png",
+                "type": "image",
+                "key": "Green-Time-bar-inside-fill"
             },
             {
                 "url": "src/scripts/InputManager.js",
@@ -304,6 +319,15 @@
                 },
                 "type": "spritesheet",
                 "key": "red-shadow-2"
+            },{
+                "url": "assets/images/mcq/Red-Tima-bar-inside-.png",
+                "type": "image",
+                "key": "Red-Tima-bar-inside-"
+            },
+            {
+                "url": "assets/images/mcq/Red-Time-bar-fill.png",
+                "type": "image",
+                "key": "Red-Time-bar-fill"
             },
             {
                 "url": "assets/images/gameplay/setting-button.png",
@@ -319,6 +343,11 @@
                 "url": "src/scripts/SoundManager.js",
                 "type": "script",
                 "key": "SoundManager"
+            },
+            {
+                "url": "assets/images/mcq/Time-bar-inside-fill.png",
+                "type": "image",
+                "key": "Time-bar-inside-fill"
             },
             {
                 "url": "assets/images/gameplay/dice/timer.png",
@@ -360,6 +389,15 @@
                 },
                 "type": "spritesheet",
                 "key": "yellow-shadow-2"
+            },{
+                "url": "assets/images/mcq/Yellow-Time-bar-fill.png",
+                "type": "image",
+                "key": "Yellow-Time-bar-fill"
+            },
+            {
+                "url": "assets/images/mcq/Yellow-time-bar-inside-fill.png",
+                "type": "image",
+                "key": "Yellow-time-bar-inside-fill"
             }
         ]
     },

@@ -81,6 +81,7 @@ class PlayerManager {
     switch (iUserId) {
       case this.player1.name:
         this.oScene.container_quiz.setVisible(true);
+        this.oScene.quiz.playMcqShadowAnimation("green-shadow");
         this.player1.playShadowAnimation("green-shadow");
         break;
       case this.player2.name:

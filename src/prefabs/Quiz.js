@@ -8,6 +8,12 @@ class Quiz extends Phaser.GameObjects.Container {
 	constructor(scene, x, y) {
 		super(scene, x ?? 0, y ?? 0);
 
+		// quizGreenBox
+		const quizGreenBox = scene.add.image(8, -1, "green-shadow-2", 0);
+		quizGreenBox.scaleX = 1.0781308072315172;
+		quizGreenBox.scaleY = 0.8293393493236461;
+		this.add(quizGreenBox);
+
 		// box_Pop_Up
 		const box_Pop_Up = scene.add.image(7, 2, "Box-Pop-Up");
 		this.add(box_Pop_Up);
@@ -80,6 +86,7 @@ class Quiz extends Phaser.GameObjects.Container {
 		option_1.setWordWrapWidth(300);
 		this.add(option_1);
 
+		this.quizGreenBox = quizGreenBox;
 		this.queTxt = queTxt;
 		this.optionFourBox = optionFourBox;
 		this.optionThreeBox = optionThreeBox;
@@ -96,6 +103,8 @@ class Quiz extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
+	/** @type {Phaser.GameObjects.Image} */
+	quizGreenBox;
 	/** @type {Phaser.GameObjects.Text} */
 	queTxt;
 	/** @type {Phaser.GameObjects.Image} */
@@ -127,6 +136,10 @@ class Quiz extends Phaser.GameObjects.Container {
 			eval("this.option_"+(1+i)).text =  question.aOptions[i].sOptions;
 		});
 	}
+	playMcqShadowAnimation = (key) => {
+		this.quizGreenBox.anims.play(key, true);
+	}
+
 	/* END-USER-CODE */
 }
 

@@ -17,6 +17,21 @@
             "list": [
                 {
                     "type": "Image",
+                    "id": "add4db6f-b4e1-4d02-bf63-92d8e34ac839",
+                    "label": "quizGreenBox",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "green-shadow-2",
+                        "frame": 0
+                    },
+                    "x": 8,
+                    "y": -1,
+                    "scaleX": 1.0781308072315172,
+                    "scaleY": 0.8293393493236461
+                },
+                {
+                    "type": "Image",
                     "id": "9b7d445f-4e96-4c28-af6c-70d2d1cee760",
                     "label": "box_Pop_Up",
                     "components": [],
