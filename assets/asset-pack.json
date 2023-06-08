@@ -17,6 +17,32 @@
                 "key": "blue-pawn"
             },
             {
+                "url": "assets/images/gameplay/blue-shadow.png",
+                "frameConfig": {
+                    "frameWidth": 1020,
+                    "frameHeight": 464,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "blue-shadow"
+            },
+            {
+                "url": "assets/images/gameplay/blue-shadow-2.png",
+                "frameConfig": {
+                    "frameWidth": 1020,
+                    "frameHeight": 464,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "blue-shadow-2"
+            },
+            {
                 "url": "assets/images/gameplay/box-answer.png",
                 "type": "image",
                 "key": "box-answer"
@@ -108,6 +134,32 @@
                 "key": "green-pawn"
             },
             {
+                "url": "assets/images/gameplay/green-shadow.png",
+                "frameConfig": {
+                    "frameWidth": 1020,
+                    "frameHeight": 464,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "green-shadow"
+            },
+            {
+                "url": "assets/images/gameplay/green-shadow-2.png",
+                "frameConfig": {
+                    "frameWidth": 1020,
+                    "frameHeight": 464,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "green-shadow-2"
+            },
+            {
                 "url": "src/scripts/InputManager.js",
                 "type": "script",
                 "key": "InputManager"
@@ -121,6 +173,11 @@
                 "url": "assets/images/gameplay/ping-background.png",
                 "type": "image",
                 "key": "ping-background"
+            },
+            {
+                "url": "assets/animations/player.json",
+                "type": "animation",
+                "key": "player"
             },
             {
                 "url": "assets/images/gameplay/player-avtar-01.png",
@@ -223,6 +280,32 @@
                 "key": "red-pawn"
             },
             {
+                "url": "assets/images/gameplay/red-shadow.png",
+                "frameConfig": {
+                    "frameWidth": 1020,
+                    "frameHeight": 464,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "red-shadow"
+            },
+            {
+                "url": "assets/images/gameplay/red-shadow-2.png",
+                "frameConfig": {
+                    "frameWidth": 1020,
+                    "frameHeight": 464,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "red-shadow-2"
+            },
+            {
                 "url": "assets/images/gameplay/setting-button.png",
                 "type": "image",
                 "key": "setting-button"
@@ -251,6 +334,32 @@
                 "url": "assets/images/gameplay/yellow-pawn.png",
                 "type": "image",
                 "key": "yellow-pawn"
+            },
+            {
+                "url": "assets/images/gameplay/yellow-shadow.png",
+                "frameConfig": {
+                    "frameWidth": 1020,
+                    "frameHeight": 464,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "yellow-shadow"
+            },
+            {
+                "url": "assets/images/gameplay/yellow-shadow-2.png",
+                "frameConfig": {
+                    "frameWidth": 1020,
+                    "frameHeight": 464,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "yellow-shadow-2"
             }
         ]
     },

@@ -1,0 +1,93 @@
+{
+    "anims": [
+        {
+            "key": "green-shadow",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "green-shadow",
+                    "frame": 0,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "green-shadow-2",
+                    "frame": 0,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "red-shadow",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "red-shadow",
+                    "frame": 0,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "red-shadow-2",
+                    "frame": 0,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "blue-shadow",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "blue-shadow",
+                    "frame": 0,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "blue-shadow-2",
+                    "frame": 0,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "yellow-shadow",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "yellow-shadow",
+                    "frame": 0,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "yellow-shadow-2",
+                    "frame": 0,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "repeat": -1
+        }
+    ],
+    "globalTimeScale": 1,
+    "meta": {
+        "app": "Phaser Editor 2D v3",
+        "contentType": "Phaser v3 Animations"
+    }
+}

@@ -45,7 +45,7 @@ class SocketManager {
 
     // For Requesting Socket Emits
     this.emit = (sEventName, oData = {}, callback) => {
-      this.socket.emit(this.iBoardId, { sEventName, oData }, callback);
+      this.socket.emit(this.iBoardId, { sEventName, oData }, (error, response) => { });
     };
   }
 
@@ -53,7 +53,9 @@ class SocketManager {
     console.log('cb', data);
     this.oScene.oGameManager.setGameData(data.oData);
   }
+
   onReceivedData(data) {
+    console.log(data.sEventName, data)
     switch (data.sEventName) {
       case "resUserJoined":
         this.oScene.oPlayerManager.setUserData(data.oData);

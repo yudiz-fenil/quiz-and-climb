@@ -5,6 +5,7 @@ class GameManager {
     }
 
     setGameData(oData) {
+        this.eState = oData.eState;
         this.aBoardPositions = oData.aBoardPositions;
         this.aParticipant = oData.aParticipant;
         this.aQuestions = oData.aQuestions;
@@ -19,10 +20,14 @@ class GameManager {
         this.nTotalGameTime = oData.nTotalGameTime;
         this.oCurrentQuestion = oData.oCurrentQuestion;
 
-        if (this.aParticipant.length == this.nMaxPlayer) {
-            for (let i = 0; i <= this.aParticipant.length; i++) {
-                this.oScene.oPlayerManager.setUserData(this.aParticipant[i]);
+        if (this.eState != "finished") {
+            if (this.aParticipant.length == this.nMaxPlayer) {
+                for (let i = 0; i <= this.aParticipant.length; i++) {
+                    this.oScene.oPlayerManager.setUserData(this.aParticipant[i]);
+                }
             }
+        } else {
+            window.close();
         }
     }
 }

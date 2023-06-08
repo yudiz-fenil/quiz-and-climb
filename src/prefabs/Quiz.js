@@ -8,15 +8,16 @@ class Quiz extends Phaser.GameObjects.Container {
 	constructor(scene, x, y) {
 		super(scene, x ?? 0, y ?? 0);
 
-
 		// box_Pop_Up
 		const box_Pop_Up = scene.add.image(7, 2, "Box-Pop-Up");
 		this.add(box_Pop_Up);
 
 		// queTxt
-		const queTxt = scene.add.text(2, -82, "", {});
-		queTxt.setOrigin(0.5, 0.5);
-		queTxt.setStyle({ "fontSize": "35px" });
+		const queTxt = scene.add.text(2, -121, "", {});
+		queTxt.setOrigin(0.5, 0);
+		queTxt.text = "iufgirueh ghruehi ihr ei re ger ghie iogheio frhiogrei gih eriog ierhgi heighie hgie ge gyeio i";
+		queTxt.setStyle({ "align": "center", "fontSize": "35px", "fontStyle": "bold" });
+		queTxt.setWordWrapWidth(940);
 		this.add(queTxt);
 
 		// container_optionbtn
@@ -51,28 +52,32 @@ class Quiz extends Phaser.GameObjects.Container {
 		const option_4 = scene.add.text(247, 106, "", {});
 		option_4.setOrigin(0.5, 0.5);
 		option_4.text = "option4";
-		option_4.setStyle({ "fontSize": "30px" });
+		option_4.setStyle({ "fontSize": "30px", "fontStyle": "bold", "maxLines":2});
+		option_4.setWordWrapWidth(300);
 		this.add(option_4);
 
 		// option_3
 		const option_3 = scene.add.text(235, 21, "", {});
 		option_3.setOrigin(0.5, 0.5);
 		option_3.text = "option3";
-		option_3.setStyle({ "fontSize": "30px" });
+		option_3.setStyle({ "fontSize": "30px", "fontStyle": "bold", "maxLines":2});
+		option_3.setWordWrapWidth(300);
 		this.add(option_3);
 
 		// option_2
 		const option_2 = scene.add.text(-237, 108, "", {});
 		option_2.setOrigin(0.5, 0.5);
 		option_2.text = "option2";
-		option_2.setStyle({ "fontSize": "30px" });
+		option_2.setStyle({ "fontSize": "30px", "fontStyle": "bold", "maxLines":2});
+		option_2.setWordWrapWidth(300);
 		this.add(option_2);
 
 		// option_1
 		const option_1 = scene.add.text(-237, 19, "", {});
 		option_1.setOrigin(0.5, 0.5);
-		option_1.text = "option1";
-		option_1.setStyle({ "fontSize": "30px" });
+		option_1.text = "option 1";
+		option_1.setStyle({ "fontSize": "30px", "fontStyle": "bold", "maxLines":2});
+		option_1.setWordWrapWidth(300);
 		this.add(option_1);
 
 		this.queTxt = queTxt;
@@ -123,9 +128,6 @@ class Quiz extends Phaser.GameObjects.Container {
 		});
 	}
 	/* END-USER-CODE */
-	 
-	 
-
 }
 
 /* END OF COMPILED CODE */
