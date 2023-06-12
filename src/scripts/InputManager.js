@@ -20,7 +20,6 @@ class InputManager {
             this.oScene.dice.dice.anims.play("dice-roll", true).on('animationcomplete', () => {
                 this.oScene.reqRollDice();
                 this.oScene.dice.dice.disableInteractive();
-                this.oScene.dice.dice.setTexture("dice", 5);
             });
         });
     }

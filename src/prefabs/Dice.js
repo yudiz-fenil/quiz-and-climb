@@ -29,6 +29,7 @@ class Dice extends Phaser.GameObjects.Container {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+		this.oScene = scene;
 		/* END-USER-CTR-CODE */
 	}
 
@@ -40,6 +41,12 @@ class Dice extends Phaser.GameObjects.Container {
 	/* START-USER-CODE */
 
 	// Write your code here.
+	resRollDice = ({ iUserId, nDice, oScore }) => {
+		this.dice.setTexture("dice", nDice - 1)
+		if(this.oScene.oGameManager.ownPlayerId == iUserId){
+			this.oScene.reqPlayerPosition();
+		}
+	}
 
 	/* END-USER-CODE */
 }

@@ -2,6 +2,8 @@ class GameManager {
     constructor(oScene) {
         this.oScene = oScene;
         this.iBoardId = " ";
+        this.ownPlayerId = " ";
+        this.isownTurn =  false;
     }
 
     setGameData(oData) {
