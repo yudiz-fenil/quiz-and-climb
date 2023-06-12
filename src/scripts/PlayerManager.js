@@ -20,12 +20,14 @@ class PlayerManager {
       this.player1 = new PlayerProfile(this.oScene, 223, 1669);
       this.player1.setUsername(sUserName);
       console.log("%c ownPlayer iUserId", "background: green; ", iUserId);
+      this.oScene.oGameManager.ownPlayerId = iUserId;
       this.player1.setHealth(nTurnMissed);
       this.player1.setName(iUserId);
       this.player1.setScore(aPawn[0]);
       this.oScene.container_players.add(this.player1);
     }
     else {
+      this.oScene.oGameManager.isownTurn = false;
       switch (this.players.size) {
         case 2:
           this.player2 = new PlayerProfile(this.oScene, 223, 325);
@@ -80,21 +82,24 @@ class PlayerManager {
     this.changeTurn();
     switch (iUserId) {
       case this.player1.name:
+        console.log("player1",this.player1.name);
         this.oScene.container_quiz.setVisible(true);
-        this.oScene.quiz.playMcqShadowAnimation("green-shadow");
         this.player1.playShadowAnimation("green-shadow");
         break;
       case this.player2.name:
-        this.oScene.  container_quiz.setVisible(false);
+        console.log("player2",this.player2.name);
+        this.oScene.container_quiz.setVisible(false);
         this.player2.playShadowAnimation("red-shadow");
         this.player2.container_answer_question.setVisible(true);
         break;
       case this.player3.name:
+        console.log("player3",this.player3.name);
         this.oScene.container_quiz.setVisible(false);
         this.player3.playShadowAnimation("blue-shadow");
         this.player3.container_answer_question.setVisible(true);
         break;
       case this.player4.name:
+        console.log("player4",this.player4.name);
         this.oScene.container_quiz.setVisible(false);
         this.player4.playShadowAnimation("yellow-shadow");
         this.player4.container_answer_question.setVisible(true);

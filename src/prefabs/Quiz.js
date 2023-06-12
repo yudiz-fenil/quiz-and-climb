@@ -30,72 +30,77 @@ class Quiz extends Phaser.GameObjects.Container {
 		const container_optionbtn = scene.add.container(-235, 19);
 		this.add(container_optionbtn);
 
-		// optionFourBox
-		const optionFourBox = scene.add.image(472, 88, "MCQ-Question-Answer-box");
-		optionFourBox.scaleX = 0.6;
-		optionFourBox.scaleY = 0.7;
-		container_optionbtn.add(optionFourBox);
-
-		// optionThreeBox
-		const optionThreeBox = scene.add.image(472, 0, "MCQ-Question-Answer-box");
-		optionThreeBox.scaleX = 0.6;
-		optionThreeBox.scaleY = 0.7;
-		container_optionbtn.add(optionThreeBox);
-
-		// optionTwoBox
-		const optionTwoBox = scene.add.image(0, 88, "MCQ-Question-Answer-box");
-		optionTwoBox.scaleX = 0.6;
-		optionTwoBox.scaleY = 0.7;
-		container_optionbtn.add(optionTwoBox);
-
 		// optionOneBox
 		const optionOneBox = scene.add.image(0, 0, "MCQ-Question-Answer-box");
 		optionOneBox.scaleX = 0.6;
 		optionOneBox.scaleY = 0.7;
 		container_optionbtn.add(optionOneBox);
 
-		// option_4
-		const option_4 = scene.add.text(247, 106, "", {});
-		option_4.setOrigin(0.5, 0.5);
-		option_4.text = "option4";
-		option_4.setStyle({ "fontSize": "30px", "fontStyle": "bold", "maxLines":2});
-		option_4.setWordWrapWidth(300);
-		this.add(option_4);
+		// optionTwoBox
+		const optionTwoBox = scene.add.image(0, 86, "MCQ-Question-Answer-box");
+		optionTwoBox.scaleX = 0.6;
+		optionTwoBox.scaleY = 0.7;
+		container_optionbtn.add(optionTwoBox);
 
-		// option_3
-		const option_3 = scene.add.text(235, 21, "", {});
-		option_3.setOrigin(0.5, 0.5);
-		option_3.text = "option3";
-		option_3.setStyle({ "fontSize": "30px", "fontStyle": "bold", "maxLines":2});
-		option_3.setWordWrapWidth(300);
-		this.add(option_3);
+		// optionThreeBox
+		const optionThreeBox = scene.add.image(472, -1, "MCQ-Question-Answer-box");
+		optionThreeBox.scaleX = 0.6;
+		optionThreeBox.scaleY = 0.7;
+		container_optionbtn.add(optionThreeBox);
 
-		// option_2
-		const option_2 = scene.add.text(-237, 108, "", {});
-		option_2.setOrigin(0.5, 0.5);
-		option_2.text = "option2";
-		option_2.setStyle({ "fontSize": "30px", "fontStyle": "bold", "maxLines":2});
-		option_2.setWordWrapWidth(300);
-		this.add(option_2);
+		// optionFourBox
+		const optionFourBox = scene.add.image(472, 86, "MCQ-Question-Answer-box");
+		optionFourBox.scaleX = 0.6;
+		optionFourBox.scaleY = 0.7;
+		container_optionbtn.add(optionFourBox);
 
 		// option_1
 		const option_1 = scene.add.text(-237, 19, "", {});
+		option_1.name = "option_1";
 		option_1.setOrigin(0.5, 0.5);
 		option_1.text = "option 1";
 		option_1.setStyle({ "fontSize": "30px", "fontStyle": "bold", "maxLines":2});
 		option_1.setWordWrapWidth(300);
 		this.add(option_1);
 
+		// option_2
+		const option_2 = scene.add.text(-237, 106, "", {});
+		option_2.name = "option_2";
+		option_2.setOrigin(0.5, 0.5);
+		option_2.text = "option2";
+		option_2.setStyle({ "fontSize": "30px", "fontStyle": "bold", "maxLines":2});
+		option_2.setWordWrapWidth(300);
+		this.add(option_2);
+
+		// option_3
+		const option_3 = scene.add.text(235, 20, "", {});
+		option_3.name = "option_3";
+		option_3.setOrigin(0.5, 0.5);
+		option_3.text = "option3";
+		option_3.setStyle({ "fontSize": "30px", "fontStyle": "bold", "maxLines":2});
+		option_3.setWordWrapWidth(300);
+		this.add(option_3);
+
+		// option_4
+		const option_4 = scene.add.text(247, 104, "", {});
+		option_4.name = "option_4";
+		option_4.setOrigin(0.5, 0.5);
+		option_4.text = "option4";
+		option_4.setStyle({ "fontSize": "30px", "fontStyle": "bold", "maxLines":2});
+		option_4.setWordWrapWidth(300);
+		this.add(option_4);
+
 		this.quizGreenBox = quizGreenBox;
 		this.queTxt = queTxt;
-		this.optionFourBox = optionFourBox;
-		this.optionThreeBox = optionThreeBox;
-		this.optionTwoBox = optionTwoBox;
+		this.container_optionbtn = container_optionbtn;
 		this.optionOneBox = optionOneBox;
-		this.option_4 = option_4;
-		this.option_3 = option_3;
-		this.option_2 = option_2;
+		this.optionTwoBox = optionTwoBox;
+		this.optionThreeBox = optionThreeBox;
+		this.optionFourBox = optionFourBox;
 		this.option_1 = option_1;
+		this.option_2 = option_2;
+		this.option_3 = option_3;
+		this.option_4 = option_4;
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -107,22 +112,24 @@ class Quiz extends Phaser.GameObjects.Container {
 	quizGreenBox;
 	/** @type {Phaser.GameObjects.Text} */
 	queTxt;
+	/** @type {Phaser.GameObjects.Container} */
+	container_optionbtn;
 	/** @type {Phaser.GameObjects.Image} */
-	optionFourBox;
-	/** @type {Phaser.GameObjects.Image} */
-	optionThreeBox;
+	optionOneBox;
 	/** @type {Phaser.GameObjects.Image} */
 	optionTwoBox;
 	/** @type {Phaser.GameObjects.Image} */
-	optionOneBox;
+	optionThreeBox;
+	/** @type {Phaser.GameObjects.Image} */
+	optionFourBox;
 	/** @type {Phaser.GameObjects.Text} */
-	option_4;
-	/** @type {Phaser.GameObjects.Text} */
-	option_3;
+	option_1;
 	/** @type {Phaser.GameObjects.Text} */
 	option_2;
 	/** @type {Phaser.GameObjects.Text} */
-	option_1;
+	option_3;
+	/** @type {Phaser.GameObjects.Text} */
+	option_4;
 
 	/* START-USER-CODE */
 
@@ -138,6 +145,21 @@ class Quiz extends Phaser.GameObjects.Container {
 	}
 	playMcqShadowAnimation = (key) => {
 		this.quizGreenBox.anims.play(key, true);
+	}
+	setGreenColor = (ans) => {
+		console.log(ans);
+		switch (ans) {
+            case 1 :
+				this.option_1.setTexture("Green-Box-answer-");
+              break;
+            case 2:
+              break;
+            case 3:
+              break;
+            case 4:
+              break;
+          }
+
 	}
 
 	/* END-USER-CODE */

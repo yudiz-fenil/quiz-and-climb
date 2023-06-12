@@ -26,35 +26,44 @@ class Level extends Phaser.Scene {
 		const game = new Game(this, 0, 0);
 		this.add.existing(game);
 
-		// container_quiz
-		const container_quiz = this.add.container(0, 0);
-		container_quiz.visible = false;
-
-		// quiz
-		const quiz = new Quiz(this, 535, 1002);
-		container_quiz.add(quiz);
-
 		// dice
 		const dice = new Dice(this, 540, 1633);
 		this.add.existing(dice);
 
+		// container_quiz
+		const container_quiz = this.add.container(0, 0);
+		container_quiz.visible = false;
+
+		// rectangle_1
+		const rectangle_1 = this.add.rectangle(546, 949, 128, 128);
+		rectangle_1.scaleX = 9;
+		rectangle_1.scaleY = 15;
+		rectangle_1.alpha = 0.8;
+		rectangle_1.isFilled = true;
+		rectangle_1.fillColor = 1250067;
+		container_quiz.add(rectangle_1);
+
+		// quiz
+		const quiz = new Quiz(this, 535, 1003);
+		container_quiz.add(quiz);
+
 		// container_players
 		const container_players = this.add.container(0, 0);
 
+		this.dice = dice;
 		this.container_quiz = container_quiz;
 		this.quiz = quiz;
-		this.dice = dice;
 		this.container_players = container_players;
 
 		this.events.emit("scene-awake");
 	}
 
+	/** @type {Dice} */
+	dice;
 	/** @type {Phaser.GameObjects.Container} */
 	container_quiz;
 	/** @type {Quiz} */
 	quiz;
-	/** @type {Dice} */
-	dice;
 	/** @type {Phaser.GameObjects.Container} */
 	container_players;
 
@@ -84,14 +93,11 @@ class Level extends Phaser.Scene {
 			sRootUrl
 		);
 	}
-
 	reqAnswer = (iOptionId) => {
 		this.oSocketManager.emit('reqAnswer', { iOptionId: iOptionId, iQuestionId: this.oQuizeManager.questionId });
 	}
-
-	reqRollDice = () => {
-		this.oSocketManager.emit("reqRollDice");
-	}
+	reqRollDice = () => this.oSocketManager.emit("reqRollDice", {});
+	reqPlayerPosition = () => this.oSocketManager.emit("reqPlayerPosition", {});
 	setQuestonTimer = ({ nTotalTurnTime, ttl }) => {
 		this.time1 = ttl / 1000
 		this.energyContainer = this.add.sprite(551, 776, "Green-Time-bar-inside-fill");
@@ -103,14 +109,14 @@ class Level extends Phaser.Scene {
 		this.energyBarMask.visible = false;
 		this.energyBar.mask = new Phaser.Display.Masks.BitmapMask(this, this.energyBarMask);
 		this.gameTimer = this.time.addEvent({
-			delay: 700,
-			callback: function() {
+			delay: 600,
+			callback: function () {
 				this.timeLeft--;
 				this.stepWidth = this.energyBarMask.displayWidth / this.time1;
 				this.energyBarMask.x -= this.stepWidth;
 			},
-			callbackScope : this,
-			loop : true
+			callbackScope: this,
+			loop: true
 		});
 
 	}
