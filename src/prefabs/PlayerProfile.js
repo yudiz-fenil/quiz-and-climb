@@ -100,6 +100,11 @@ class PlayerProfile extends Phaser.GameObjects.Container {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+		this.oScene = scene;
+		this.x = x
+		this.y = y
+		this.nPawnMoveDelay = 500;
+		this.aTokens = this.oScene.oGameManager.aTokens;
 		/* END-USER-CTR-CODE */
 	}
 
@@ -162,6 +167,31 @@ class PlayerProfile extends Phaser.GameObjects.Container {
 	stopShadowAnimation = () => {
 		this.player_shadow.setVisible(false);
 		this.player_shadow.anims.stop();
+	}
+	playMoveAnimation = (nPawn, nMove, oScore) => {
+		let delay = 0;
+		const oToken = this.aTokens[nPawn];
+		const nDestination = oToken.position + nMove;
+		let s = oToken.position + 1;
+		for (let i = 1; i <= nMove; i++) {
+			this.oScene.tweens.add({
+				targets: this.pawn,
+				x: this.oScene.game.container_map_board.list[s].x - this.x,
+				y: this.oScene.game.container_map_board.list[s].y - this.y,
+				ease: "Power3",
+				duration: this.nPawnMoveDelay,
+				delay: delay,
+				onComplete: () => {
+					if (i == nMove) {
+						this.aTokens[nPawn].finalPosition = nDestination;
+						if (nPawn == 0) this.oScene.reqPlayerPosition(nDestination);
+					}
+					oToken.position = s;
+				},
+			});
+			if (i != nMove) s++;
+			delay += this.nPawnMoveDelay;
+		}
 	}
 
 	/* END-USER-CODE */

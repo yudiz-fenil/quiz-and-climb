@@ -30,6 +30,9 @@ class Level extends Phaser.Scene {
 		const dice = new Dice(this, 540, 1633);
 		this.add.existing(dice);
 
+		// container_players
+		const container_players = this.add.container(0, 0);
+
 		// container_quiz
 		const container_quiz = this.add.container(0, 0);
 		container_quiz.visible = false;
@@ -47,25 +50,38 @@ class Level extends Phaser.Scene {
 		const quiz = new Quiz(this, 535, 1003);
 		container_quiz.add(quiz);
 
-		// container_players
-		const container_players = this.add.container(0, 0);
+		// container_menu
+		const container_menu = this.add.container(0, 0);
 
+		// btn_settings
+		const btn_settings = this.add.image(982, 91, "setting-button");
+		container_menu.add(btn_settings);
+
+		this.game = game;
 		this.dice = dice;
+		this.container_players = container_players;
 		this.container_quiz = container_quiz;
 		this.quiz = quiz;
-		this.container_players = container_players;
+		this.container_menu = container_menu;
+		this.btn_settings = btn_settings;
 
 		this.events.emit("scene-awake");
 	}
 
+	/** @type {Game} */
+	game;
 	/** @type {Dice} */
 	dice;
+	/** @type {Phaser.GameObjects.Container} */
+	container_players;
 	/** @type {Phaser.GameObjects.Container} */
 	container_quiz;
 	/** @type {Quiz} */
 	quiz;
 	/** @type {Phaser.GameObjects.Container} */
-	container_players;
+	container_menu;
+	/** @type {Phaser.GameObjects.Image} */
+	btn_settings;
 
 	/* START-USER-CODE */
 
@@ -78,6 +94,10 @@ class Level extends Phaser.Scene {
 		this.oPlayerManager = new PlayerManager(this);
 		this.oGameManager = new GameManager(this);
 		this.instantiateSocketManager();
+		this.btn_settings.setInteractive().on('pointerdown', () => {
+			this.oSocketManager.emit("reqLeave");
+			window.close();
+		})
 	}
 
 	instantiateSocketManager = () => {
@@ -94,10 +114,11 @@ class Level extends Phaser.Scene {
 		);
 	}
 	reqAnswer = (iOptionId) => {
+		console.log('reqAnswerCalled', iOptionId)
 		this.oSocketManager.emit('reqAnswer', { iOptionId: iOptionId, iQuestionId: this.oQuizeManager.questionId });
 	}
 	reqRollDice = () => this.oSocketManager.emit("reqRollDice", {});
-	reqPlayerPosition = () => this.oSocketManager.emit("reqPlayerPosition", {});
+	reqPlayerPosition = (nIndex) => this.oSocketManager.emit("reqPlayerPosition", { nIndex });
 	setQuestonTimer = ({ nTotalTurnTime, ttl }) => {
 		this.time1 = ttl / 1000
 		this.energyContainer = this.add.sprite(551, 776, "Green-Time-bar-inside-fill");

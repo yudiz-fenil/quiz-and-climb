@@ -30,6 +30,9 @@ class Dice extends Phaser.GameObjects.Container {
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		this.oScene = scene;
+		this.dice.on('pointerdown', () => {
+			this.diceClickHandler();
+		})
 		/* END-USER-CTR-CODE */
 	}
 
@@ -41,11 +44,27 @@ class Dice extends Phaser.GameObjects.Container {
 	/* START-USER-CODE */
 
 	// Write your code here.
-	resRollDice = ({ iUserId, nDice, oScore }) => {
-		this.dice.setTexture("dice", nDice - 1)
-		if(this.oScene.oGameManager.ownPlayerId == iUserId){
-			this.oScene.reqPlayerPosition();
-		}
+	// resDiceTurn = ({ iUserId, ttl, nTotalTurnTime, oScore }) => {
+	// 	if (this.oScene.oGameManager.ownPlayerId == iUserId) {
+	// 		this.dice.setInteractive();
+	// 	}
+	// 	this.oScene.container_quiz.visible = false;
+	// }
+	// resRollDice = ({ iUserId, nDice, oScore }) => {
+	// 	if (this.oScene.oGameManager.ownPlayerId == iUserId) {
+	// 		this.dice.setTexture("dice", nDice - 1)
+	// 		this.oScene.reqPlayerPosition();
+	// 	} else {
+	// 		this.dice.anims.play("dice-roll", true).once('animationcomplete', () => {
+	// 			this.dice.setTexture("dice", nDice - 1)
+	// 		});
+	// 	}
+	// }
+	diceClickHandler = () => {
+		this.dice.anims.play("dice-roll", true).once('animationcomplete', () => {
+			this.oScene.reqRollDice();
+			this.dice.disableInteractive();
+		});
 	}
 
 	/* END-USER-CODE */

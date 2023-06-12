@@ -75,11 +75,10 @@ class SocketManager {
         this.oScene.oQuizeManager.resAnswer(data.oData);
         break;
       case "resDiceTurn":
-        this.oScene.container_quiz.visible = false;
-        this.oScene.dice.dice.setInteractive();
+        this.oScene.oPlayerManager.setDiceTurn(data.oData);
         break;
       case "resRollDice":
-        this.oScene.dice.resRollDice(data.oData);
+        this.oScene.oPlayerManager.setRollDice(data.oData);
         break;
       case "resTurnMissed":
         console.log("%c resTurnMissed :: ", "background: red", data);

@@ -36,6 +36,7 @@
                 "y"
             ],
             "label": "game",
+            "scope": "CLASS",
             "components": [],
             "x": 0,
             "y": 0,
@@ -54,6 +55,14 @@
             "x": 540,
             "y": 1633,
             "nestedPrefabs": []
+        },
+        {
+            "type": "Container",
+            "id": "6cc9e7fa-90d3-4f3e-9b32-093997c4ce72",
+            "label": "container_players",
+            "scope": "CLASS",
+            "components": [],
+            "list": []
         },
         {
             "type": "Container",
@@ -96,11 +105,24 @@
         },
         {
             "type": "Container",
-            "id": "6cc9e7fa-90d3-4f3e-9b32-093997c4ce72",
-            "label": "container_players",
+            "id": "54536f95-e4ab-4e40-b908-2143535ce4be",
+            "label": "container_menu",
             "scope": "CLASS",
             "components": [],
-            "list": []
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "fab11427-836b-4f8b-aabf-a92f70b93763",
+                    "label": "btn_settings",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "setting-button"
+                    },
+                    "x": 982,
+                    "y": 91
+                }
+            ]
         }
     ],
     "plainObjects": [],
