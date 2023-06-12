@@ -82,24 +82,24 @@ class PlayerManager {
     this.changeTurn();
     switch (iUserId) {
       case this.player1.name:
-        console.log("player1",this.player1.name);
+        console.log("player1", this.player1.name);
         this.oScene.container_quiz.setVisible(true);
         this.player1.playShadowAnimation("green-shadow");
         break;
       case this.player2.name:
-        console.log("player2",this.player2.name);
+        console.log("player2", this.player2.name);
         this.oScene.container_quiz.setVisible(false);
         this.player2.playShadowAnimation("red-shadow");
         this.player2.container_answer_question.setVisible(true);
         break;
       case this.player3.name:
-        console.log("player3",this.player3.name);
+        console.log("player3", this.player3.name);
         this.oScene.container_quiz.setVisible(false);
         this.player3.playShadowAnimation("blue-shadow");
         this.player3.container_answer_question.setVisible(true);
         break;
       case this.player4.name:
-        console.log("player4",this.player4.name);
+        console.log("player4", this.player4.name);
         this.oScene.container_quiz.setVisible(false);
         this.player4.playShadowAnimation("yellow-shadow");
         this.player4.container_answer_question.setVisible(true);
@@ -120,6 +120,43 @@ class PlayerManager {
         break;
       case this.player4.name:
         this.player4.setHealth(nTurnMissed);
+        break;
+    }
+  }
+
+  setDiceTurn = ({ iUserId, ttl, nTotalTurnTime, oScore }) => {
+    if (this.oScene.oGameManager.ownPlayerId == iUserId) {
+      this.oScene.dice.dice.setInteractive();
+    }
+    this.oScene.container_quiz.visible = false;
+  }
+
+  setRollDice = ({ iUserId, nDice, oScore }) => {
+    if (this.oScene.oGameManager.ownPlayerId == iUserId) {
+      this.oScene.dice.dice.setTexture("dice", nDice - 1)
+      // this.oScene.reqPlayerPosition();
+      this.movePlayerPawn(iUserId, nDice, oScore);
+    } else {
+      this.oScene.dice.dice.anims.play("dice-roll", true).once('animationcomplete', () => {
+        this.oScene.dice.dice.setTexture("dice", nDice - 1)
+        this.movePlayerPawn(iUserId, nDice, oScore);
+      });
+    }
+  }
+
+  movePlayerPawn = (iUserId, nDice, oScore) => {
+    switch (iUserId) {
+      case this.player1.name:
+        this.player1.playMoveAnimation(0, nDice, oScore);
+        break;
+      case this.player2.name:
+        this.player2.playMoveAnimation(1, nDice, oScore);
+        break;
+      case this.player3.name:
+        this.player3.playMoveAnimation(2, nDice, oScore);
+        break;
+      case this.player4.name:
+        this.player4.playMoveAnimation(3, nDice, oScore);
         break;
     }
   }

@@ -16,7 +16,7 @@
             "components": [],
             "list": [
                 {
-                    "type": "Image",
+                    "type": "Sprite",
                     "id": "add4db6f-b4e1-4d02-bf63-92d8e34ac839",
                     "label": "quizGreenBox",
                     "scope": "CLASS",
@@ -27,8 +27,8 @@
                     },
                     "x": 8,
                     "y": -1,
-                    "scaleX": 1.0781308072315172,
-                    "scaleY": 0.8293393493236461
+                    "scaleX": 1.035,
+                    "scaleY": 0.8
                 },
                 {
                     "type": "Image",
@@ -132,6 +132,7 @@
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "option 1",
+                    "align": "center",
                     "fontSize": "30px",
                     "fontStyle": "bold",
                     "maxLines": 2,
@@ -149,6 +150,7 @@
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "option2",
+                    "align": "center",
                     "fontSize": "30px",
                     "fontStyle": "bold",
                     "maxLines": 2,
@@ -166,6 +168,7 @@
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "option3",
+                    "align": "center",
                     "fontSize": "30px",
                     "fontStyle": "bold",
                     "maxLines": 2,
@@ -183,6 +186,7 @@
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "option4",
+                    "align": "center",
                     "fontSize": "30px",
                     "fontStyle": "bold",
                     "maxLines": 2,

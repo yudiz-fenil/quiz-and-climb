@@ -3,7 +3,13 @@ class GameManager {
         this.oScene = oScene;
         this.iBoardId = " ";
         this.ownPlayerId = " ";
-        this.isownTurn =  false;
+        this.isownTurn = false;
+        this.aTokens = [
+            { position: -1, finalPosition: -1 },
+            { position: -1, finalPosition: -1 },
+            { position: -1, finalPosition: -1 },
+            { position: -1, finalPosition: -1 },
+        ]
     }
 
     setGameData(oData) {

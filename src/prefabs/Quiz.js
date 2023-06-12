@@ -9,9 +9,9 @@ class Quiz extends Phaser.GameObjects.Container {
 		super(scene, x ?? 0, y ?? 0);
 
 		// quizGreenBox
-		const quizGreenBox = scene.add.image(8, -1, "green-shadow-2", 0);
-		quizGreenBox.scaleX = 1.0781308072315172;
-		quizGreenBox.scaleY = 0.8293393493236461;
+		const quizGreenBox = scene.add.sprite(8, -1, "green-shadow-2", 0);
+		quizGreenBox.scaleX = 1.035;
+		quizGreenBox.scaleY = 0.8;
 		this.add(quizGreenBox);
 
 		// box_Pop_Up
@@ -59,7 +59,7 @@ class Quiz extends Phaser.GameObjects.Container {
 		option_1.name = "option_1";
 		option_1.setOrigin(0.5, 0.5);
 		option_1.text = "option 1";
-		option_1.setStyle({ "fontSize": "30px", "fontStyle": "bold", "maxLines":2});
+		option_1.setStyle({ "align": "center", "fontSize": "30px", "fontStyle": "bold", "maxLines": 2 });
 		option_1.setWordWrapWidth(300);
 		this.add(option_1);
 
@@ -68,7 +68,7 @@ class Quiz extends Phaser.GameObjects.Container {
 		option_2.name = "option_2";
 		option_2.setOrigin(0.5, 0.5);
 		option_2.text = "option2";
-		option_2.setStyle({ "fontSize": "30px", "fontStyle": "bold", "maxLines":2});
+		option_2.setStyle({ "align": "center", "fontSize": "30px", "fontStyle": "bold", "maxLines": 2 });
 		option_2.setWordWrapWidth(300);
 		this.add(option_2);
 
@@ -77,7 +77,7 @@ class Quiz extends Phaser.GameObjects.Container {
 		option_3.name = "option_3";
 		option_3.setOrigin(0.5, 0.5);
 		option_3.text = "option3";
-		option_3.setStyle({ "fontSize": "30px", "fontStyle": "bold", "maxLines":2});
+		option_3.setStyle({ "align": "center", "fontSize": "30px", "fontStyle": "bold", "maxLines": 2 });
 		option_3.setWordWrapWidth(300);
 		this.add(option_3);
 
@@ -86,7 +86,7 @@ class Quiz extends Phaser.GameObjects.Container {
 		option_4.name = "option_4";
 		option_4.setOrigin(0.5, 0.5);
 		option_4.text = "option4";
-		option_4.setStyle({ "fontSize": "30px", "fontStyle": "bold", "maxLines":2});
+		option_4.setStyle({ "align": "center", "fontSize": "30px", "fontStyle": "bold", "maxLines": 2 });
 		option_4.setWordWrapWidth(300);
 		this.add(option_4);
 
@@ -105,10 +105,11 @@ class Quiz extends Phaser.GameObjects.Container {
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		this.scene = scene
+		this.quizGreenBox.anims.play("green-shadow");
 		/* END-USER-CTR-CODE */
 	}
 
-	/** @type {Phaser.GameObjects.Image} */
+	/** @type {Phaser.GameObjects.Sprite} */
 	quizGreenBox;
 	/** @type {Phaser.GameObjects.Text} */
 	queTxt;
@@ -134,34 +135,15 @@ class Quiz extends Phaser.GameObjects.Container {
 	/* START-USER-CODE */
 
 	// Write your code here.
-	setQueAns = ({iUserId,question}) => {
+	setQueAns = ({ iUserId, question }) => {
 		this.scene.oQuizeManager.questionId = question._id;
 		this.queTxt.text = question.sQuestion;
 		(this.queTxt.text.length > 30) ? this.queTxt.setScale(0.7) : this.queTxt.setScale(1);
-		question.aOptions.forEach((data,i ) => {
-			(question.aOptions[i].sOptions.length > 12) ? eval("this.option_"+(1+i)).setScale(0.7) : eval("this.option_"+(1+i)).setScale(1);
-			eval("this.option_"+(1+i)).text =  question.aOptions[i].sOptions;
+		question.aOptions.forEach((data, i) => {
+			(question.aOptions[i].sOptions.length > 12) ? eval("this.option_" + (1 + i)).setScale(0.7) : eval("this.option_" + (1 + i)).setScale(1);
+			eval("this.option_" + (1 + i)).text = question.aOptions[i].sOptions;
 		});
 	}
-	playMcqShadowAnimation = (key) => {
-		this.quizGreenBox.anims.play(key, true);
-	}
-	setGreenColor = (ans) => {
-		console.log(ans);
-		switch (ans) {
-            case 1 :
-				this.option_1.setTexture("Green-Box-answer-");
-              break;
-            case 2:
-              break;
-            case 3:
-              break;
-            case 4:
-              break;
-          }
-
-	}
-
 	/* END-USER-CODE */
 }
 
