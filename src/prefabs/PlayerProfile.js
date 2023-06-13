@@ -104,7 +104,7 @@ class PlayerProfile extends Phaser.GameObjects.Container {
 		this.x = x
 		this.y = y
 		this.nPawnMoveDelay = 500;
-		this.aTokens = this.oScene.oGameManager.aTokens;
+		this.aPawns = this.oScene.oGameManager.aPawns;
 		/* END-USER-CTR-CODE */
 	}
 
@@ -149,11 +149,7 @@ class PlayerProfile extends Phaser.GameObjects.Container {
 			heart.setTexture(heartTexture);
 		});
 	};
-	setUsername = (username) => {
-		this.text_username.setText(
-			username.length > 20 ? username.slice(0, 19) + "..." : username
-		);
-	};
+	setUsername = (username) => this.text_username.setText(username.length > 20 ? username.slice(0, 19) + "..." : username);
 	setScore = (score) => this.text_score.setText(score);
 	setHealth = (nTurnMissed) => {
 		for (let i = 0; i < nTurnMissed; i++) {
@@ -170,8 +166,10 @@ class PlayerProfile extends Phaser.GameObjects.Container {
 	}
 	playMoveAnimation = (nPawn, nMove, oScore) => {
 		let delay = 0;
-		const oToken = this.aTokens[nPawn];
+		const oToken = this.aPawns[nPawn];
 		const nDestination = oToken.position + nMove;
+		console.log('nDestination', nDestination, 'nPureIndex', oScore.nPureIndex)
+		if (nDestination > 99) return false;
 		let s = oToken.position + 1;
 		for (let i = 1; i <= nMove; i++) {
 			this.oScene.tweens.add({
@@ -182,15 +180,83 @@ class PlayerProfile extends Phaser.GameObjects.Container {
 				duration: this.nPawnMoveDelay,
 				delay: delay,
 				onComplete: () => {
-					if (i == nMove) {
-						this.aTokens[nPawn].finalPosition = nDestination;
-						if (nPawn == 0) this.oScene.reqPlayerPosition(nDestination);
-					}
 					oToken.position = s;
+					if (i == nMove) {
+						this.aPawns[nPawn].finalPosition = nDestination;
+						this.checkSnakeLadder(nPawn, nDestination, oScore);
+					}
 				},
 			});
 			if (i != nMove) s++;
 			delay += this.nPawnMoveDelay;
+		}
+	}
+	checkSnakeLadder(nPawn, nDestination, oScore) {
+		const oPawns = this.aPawns[nPawn];
+		const aSnakeLadder = this.oScene.oGameManager.aSnakeLadder;
+		for (let i = 0; i < aSnakeLadder.length; i++) {
+			const ladder = aSnakeLadder[i];
+			if (ladder.nStart == nDestination) {
+				oPawns.position = ladder.nEnd - 1;
+				oPawns.finalPosition = ladder.nEnd - 1;
+				this.playMoveAnimation(nPawn, 1, oScore);
+				return true;
+			}
+		}
+		this.checkForSamePosition(nDestination);
+		return false;
+	}
+	checkForSamePosition(nDestination) {
+		if (nDestination < 0) return;
+		const aPawnsWithSamePosition = [];
+		for (let i = 0; i < this.aPawns.length; i++) {
+			const oPawn = this.aPawns[i];
+			if (oPawn.finalPosition = nDestination) {
+				aPawnsWithSamePosition.push(oPawn.pawn);
+			}
+		}
+		// for (const pawnName in this.aPawns) {
+		// 	const pawn = eval("this." + pawnName);
+		// 	if (this.oPawns[pawnName].finalPosition == nIndex) {
+		// 		aPawnsWithSamePosition.push(pawn);
+		// 	}
+		// }
+		// this.arrangePawns(aPawnsWithSamePosition, nIndex);
+	}
+	arrangePawns(aPawns, nDestination) {
+		let posX = this.oScene.game.container_map_board.list[nDestination].x;
+		let posY = this.oScene.game.container_map_board.list[nDestination].y;
+		switch (aPawns.length) {
+			case 1:
+				aPawns[0].setScale(0.8, 0.8);
+				aPawns[0].setPosition(posX, posY);
+				break;
+			case 2:
+				aPawns.forEach((pawn) => {
+					pawn.setScale(0.8, 0.8);
+					pawn.setPosition(posX - 20, posY);
+					posX += 40;
+				});
+				break;
+			case 3:
+				aPawns.forEach((pawn) => {
+					pawn.setScale(0.7, 0.7);
+					pawn.setPosition(posX - 30, posY);
+					posX += 30;
+				});
+				break;
+			case 4:
+				aPawns.forEach((pawn, i) => {
+					pawn.setScale(0.6, 0.6);
+					if (i % 2) {
+						aPawns[1].setPosition(posX + 15, posY - 15);
+						aPawns[3].setPosition(posX + 15, posY + 15);
+					} else {
+						aPawns[0].setPosition(posX - 15, posY - 15);
+						aPawns[2].setPosition(posX - 15, posY + 15);
+					}
+				});
+				break;
 		}
 	}
 

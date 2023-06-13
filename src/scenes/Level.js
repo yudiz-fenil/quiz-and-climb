@@ -114,7 +114,6 @@ class Level extends Phaser.Scene {
 		);
 	}
 	reqAnswer = (iOptionId) => {
-		console.log('reqAnswerCalled', iOptionId)
 		this.oSocketManager.emit('reqAnswer', { iOptionId: iOptionId, iQuestionId: this.oQuizeManager.questionId });
 	}
 	reqRollDice = () => this.oSocketManager.emit("reqRollDice", {});

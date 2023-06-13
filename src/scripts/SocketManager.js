@@ -75,9 +75,11 @@ class SocketManager {
         this.oScene.oQuizeManager.resAnswer(data.oData);
         break;
       case "resDiceTurn":
+        console.log(data.sEventName, data);
         this.oScene.oPlayerManager.setDiceTurn(data.oData);
         break;
       case "resRollDice":
+        console.log(data.sEventName, data);
         this.oScene.oPlayerManager.setRollDice(data.oData);
         break;
       case "resTurnMissed":
