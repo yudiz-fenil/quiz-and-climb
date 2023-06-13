@@ -19,6 +19,7 @@
                     "type": "Image",
                     "id": "c07e9ecc-3f4b-4d06-844b-48eb09cc3c3b",
                     "label": "timer",
+                    "scope": "CLASS",
                     "components": [],
                     "texture": {
                         "key": "timer"

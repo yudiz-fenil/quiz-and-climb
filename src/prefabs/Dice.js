@@ -24,18 +24,29 @@ class Dice extends Phaser.GameObjects.Container {
 		const dice = scene.add.sprite(0, 0, "dice", 0);
 		this.add(dice);
 
+		this.timer = timer;
 		this.dice_bgs = dice_bgs;
 		this.dice = dice;
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		this.oScene = scene;
+		this.x = x;
+		this.y = y;
+		this.shape = this.oScene.add.graphics();
+		this.shape.visible = false;
+		const makeShape = this.shape.createGeometryMask();
+		this.timer.setMask(makeShape);
+		this.shape.x = this.timer.x;
+		this.shape.y = this.timer.y;
 		this.dice.on('pointerdown', () => {
 			this.diceClickHandler();
 		})
 		/* END-USER-CTR-CODE */
 	}
 
+	/** @type {Phaser.GameObjects.Image} */
+	timer;
 	/** @type {Phaser.GameObjects.Image} */
 	dice_bgs;
 	/** @type {Phaser.GameObjects.Sprite} */
@@ -61,10 +72,34 @@ class Dice extends Phaser.GameObjects.Container {
 	// 	}
 	// }
 	diceClickHandler = () => {
+		this.dice.disableInteractive();
 		this.dice.anims.play("dice-roll", true).once('animationcomplete', () => {
 			this.oScene.reqRollDice();
-			this.dice.disableInteractive();
 		});
+	}
+	resTurnTimer = (ttl , nTotalTurnTime) => {
+		console.log(ttl , nTotalTurnTime);
+		this.intervalTimerReset();
+		this.timer.visible = true;
+		let ttl1 = ttl / 1000;
+		let start = 90;
+		let end = 360 / ttl1;
+		let temp = end;
+		let self = this;
+		this.intervalTimer = setInterval(() => {
+			this.shape.slice(this.x,this.y , 128 , Phaser.Math.DegToRad(start),Phaser.Math.DegToRad(start + end)).fill();
+			if(end >= 360){
+				self.intervalTimerReset();
+			}
+			end += (temp / 10);
+		}, 100)
+	}
+	intervalTimerReset = () => {
+		this.shape.clear();
+		this.timer.clearTint();
+		this.timer.tintFill = false;
+		this.timer.visible = false;
+		clearInterval(this.intervalTimer);
 	}
 
 	/* END-USER-CODE */
