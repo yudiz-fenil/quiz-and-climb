@@ -4,17 +4,31 @@ class GameManager {
         this.iBoardId = " ";
         this.ownPlayerId = " ";
         this.isownTurn = false;
-        this.aTokens = [
-            { position: -1, finalPosition: -1 },
-            { position: -1, finalPosition: -1 },
-            { position: -1, finalPosition: -1 },
-            { position: -1, finalPosition: -1 },
+        this.aPawns = [
+            { position: -1, finalPosition: -1, pawn: this.oScene.oPlayerManager.player1 },
+            { position: -1, finalPosition: -1, pawn: this.oScene.oPlayerManager.player2 },
+            { position: -1, finalPosition: -1, pawn: this.oScene.oPlayerManager.player3 },
+            { position: -1, finalPosition: -1, pawn: this.oScene.oPlayerManager.player4 },
+        ]
+        this.aSnakeLadder = [
+            // ladders
+            { nStart: 3, nEnd: 15 },
+            { nStart: 7, nEnd: 28 },
+            { nStart: 19, nEnd: 63 },
+            { nStart: 66, nEnd: 74 },
+            { nStart: 76, nEnd: 94 },
+            { nStart: 79, nEnd: 98 },
+            // snakes
+            { nStart: 24, nEnd: 6 },
+            { nStart: 52, nEnd: 32 },
+            { nStart: 78, nEnd: 58 },
+            { nStart: 92, nEnd: 66 },
+            { nStart: 97, nEnd: 23 },
         ]
     }
 
     setGameData(oData) {
         this.eState = oData.eState;
-        this.aBoardPositions = oData.aBoardPositions;
         this.aParticipant = oData.aParticipant;
         this.aQuestions = oData.aQuestions;
         this.aWinner = oData.aWinner;
@@ -30,12 +44,12 @@ class GameManager {
 
         if (this.eState != "finished") {
             if (this.aParticipant.length == this.nMaxPlayer) {
-                for (let i = 0; i <= this.aParticipant.length; i++) {
-                    this.oScene.oPlayerManager.setUserData(this.aParticipant[i]);
-                }
+                this.aParticipant.forEach(oParticipant => {
+                    this.oScene.oPlayerManager.setUserData(oParticipant);
+                });
             }
         } else {
-            window.close();
+            // window.close();
         }
     }
 }

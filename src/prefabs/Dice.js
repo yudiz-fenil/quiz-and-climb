@@ -62,7 +62,6 @@ class Dice extends Phaser.GameObjects.Container {
 		});
 	}
 	resTurnTimer = (ttl , nTotalTurnTime) => {
-		console.log(ttl , nTotalTurnTime);
 		this.intervalTimerReset();
 		this.timer.visible = true;
 		let ttl1 = ttl / 1000;
