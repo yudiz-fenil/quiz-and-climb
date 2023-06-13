@@ -134,6 +134,11 @@
                 "key": "green-bg"
             },
             {
+                "url": "assets/images/mcq/Green-Border.png",
+                "type": "image",
+                "key": "Green-Border"
+            },
+            {
                 "url": "assets/images/mcq/Green-Box-answer-.png",
                 "type": "image",
                 "key": "Green-Box-answer-"
@@ -183,6 +188,11 @@
                 "url": "src/scripts/InputManager.js",
                 "type": "script",
                 "key": "InputManager"
+            },
+            {
+                "url": "assets/images/mcq/MCQ-Pop-Up-box.png",
+                "type": "image",
+                "key": "MCQ-Pop-Up-box"
             },
             {
                 "url": "assets/images/mcq/MCQ-Question-Answer-box.png",
@@ -354,6 +364,11 @@
                 "url": "assets/images/mcq/Time-bar-inside-fill.png",
                 "type": "image",
                 "key": "Time-bar-inside-fill"
+            },
+            {
+                "url": "assets/images/mcq/Time-iocn.png",
+                "type": "image",
+                "key": "Time-iocn"
             },
             {
                 "url": "assets/images/gameplay/dice/timer.png",

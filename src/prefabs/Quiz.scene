@@ -25,10 +25,23 @@
                         "key": "green-shadow-2",
                         "frame": 0
                     },
-                    "x": 8,
+                    "x": 9,
                     "y": -1,
-                    "scaleX": 1.035,
-                    "scaleY": 0.8
+                    "scaleX": 1.07,
+                    "scaleY": 1.06
+                },
+                {
+                    "type": "Image",
+                    "id": "684b8d48-6569-4c6b-8e7d-0400bd9d61f5",
+                    "label": "green_Border",
+                    "components": [],
+                    "texture": {
+                        "key": "Green-Border"
+                    },
+                    "x": 7,
+                    "y": 3,
+                    "scaleX": 1.12,
+                    "scaleY": 1.13
                 },
                 {
                     "type": "Image",
@@ -36,10 +49,12 @@
                     "label": "box_Pop_Up",
                     "components": [],
                     "texture": {
-                        "key": "Box-Pop-Up"
+                        "key": "MCQ-Pop-Up-box"
                     },
                     "x": 7,
-                    "y": 2
+                    "y": 2,
+                    "scaleX": 0.99,
+                    "scaleY": 0.99
                 },
                 {
                     "type": "Text",
@@ -48,7 +63,7 @@
                     "scope": "CLASS",
                     "components": [],
                     "x": 2,
-                    "y": -121,
+                    "y": -135,
                     "originX": 0.5,
                     "text": "iufgirueh ghruehi ihr ei re ger ghie iogheio frhiogrei gih eriog ierhgi heighie hgie ge gyeio i",
                     "align": "center",

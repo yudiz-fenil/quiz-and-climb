@@ -120,25 +120,35 @@ class Level extends Phaser.Scene {
 	reqRollDice = () => this.oSocketManager.emit("reqRollDice", {});
 	reqPlayerPosition = (nIndex) => this.oSocketManager.emit("reqPlayerPosition", { nIndex });
 	setQuestonTimer = ({ nTotalTurnTime, ttl }) => {
-		this.time1 = ttl / 1000
-		this.energyContainer = this.add.sprite(551, 776, "Green-Time-bar-inside-fill");
+		this.timeLeft = nTotalTurnTime / 1000;
+		this.time1 = nTotalTurnTime / 1000;
+		console.log("time1", this.timeLeft);
+		this.energyContainer = this.add.sprite(530, 712, "Green-Time-bar-inside-fill");
 		this.container_quiz.add(this.energyContainer);
 		this.energyBar = this.add.sprite(this.energyContainer.x + 3, this.energyContainer.y, "Green-Tima-bar-fill");
 		this.container_quiz.add(this.energyBar);
 		this.energyBarMask = this.add.sprite(this.energyContainer.x + 3, this.energyContainer.y, "Green-Tima-bar-fill");
 		this.container_quiz.add(this.energyBarMask);
+		this.timerImg = this.add.sprite(910, 710, "Time-iocn");
+		this.container_quiz.add(this.timerImg);
 		this.energyBarMask.visible = false;
 		this.energyBar.mask = new Phaser.Display.Masks.BitmapMask(this, this.energyBarMask);
 		this.gameTimer = this.time.addEvent({
 			delay: 600,
 			callback: function () {
 				this.timeLeft--;
+				console.log("timeLeft", this.timeLeft);
 				this.stepWidth = this.energyBarMask.displayWidth / this.time1;
 				this.energyBarMask.x -= this.stepWidth;
+				if (this.timeLeft == 0) {
+					console.log("hello");
+					this.gameTimer.destroy();
+				}
 			},
 			callbackScope: this,
 			loop: true
 		});
+		console.log("goneTimer", this.gameTimer);
 
 	}
 	/* END-USER-CODE */
