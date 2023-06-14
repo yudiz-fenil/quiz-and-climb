@@ -121,7 +121,6 @@ class Level extends Phaser.Scene {
 	setQuestonTimer = ({ nTotalTurnTime, ttl }) => {
 		this.timeLeft = nTotalTurnTime / 1000;
 		this.time1 = nTotalTurnTime / 1000;
-		console.log("time1", this.timeLeft);
 		this.energyContainer = this.add.sprite(530, 712, "Green-Time-bar-inside-fill");
 		this.container_quiz.add(this.energyContainer);
 		this.energyBar = this.add.sprite(this.energyContainer.x + 3, this.energyContainer.y, "Green-Tima-bar-fill");
@@ -136,19 +135,15 @@ class Level extends Phaser.Scene {
 			delay: 600,
 			callback: function () {
 				this.timeLeft--;
-				console.log("timeLeft", this.timeLeft);
 				this.stepWidth = this.energyBarMask.displayWidth / this.time1;
 				this.energyBarMask.x -= this.stepWidth;
 				if (this.timeLeft == 0) {
-					console.log("hello");
 					this.gameTimer.destroy();
 				}
 			},
 			callbackScope: this,
 			loop: true
 		});
-		console.log("goneTimer", this.gameTimer);
-
 	}
 	/* END-USER-CODE */
 }

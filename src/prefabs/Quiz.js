@@ -67,7 +67,7 @@ class Quiz extends Phaser.GameObjects.Container {
 		option_1.name = "option_1";
 		option_1.setOrigin(0.5, 0.5);
 		option_1.text = "option 1";
-		option_1.setStyle({ "align": "center", "fontSize": "30px", "fontStyle": "bold", "maxLines":2});
+		option_1.setStyle({ "align": "center", "fontSize": "30px", "fontStyle": "bold", "maxLines": 2 });
 		option_1.setWordWrapWidth(300);
 		this.add(option_1);
 
@@ -76,7 +76,7 @@ class Quiz extends Phaser.GameObjects.Container {
 		option_2.name = "option_2";
 		option_2.setOrigin(0.5, 0.5);
 		option_2.text = "option2";
-		option_2.setStyle({ "align": "center", "fontSize": "30px", "fontStyle": "bold", "maxLines":2});
+		option_2.setStyle({ "align": "center", "fontSize": "30px", "fontStyle": "bold", "maxLines": 2 });
 		option_2.setWordWrapWidth(300);
 		this.add(option_2);
 
@@ -85,7 +85,7 @@ class Quiz extends Phaser.GameObjects.Container {
 		option_3.name = "option_3";
 		option_3.setOrigin(0.5, 0.5);
 		option_3.text = "option3";
-		option_3.setStyle({ "align": "center", "fontSize": "30px", "fontStyle": "bold", "maxLines":2});
+		option_3.setStyle({ "align": "center", "fontSize": "30px", "fontStyle": "bold", "maxLines": 2 });
 		option_3.setWordWrapWidth(300);
 		this.add(option_3);
 
@@ -94,7 +94,7 @@ class Quiz extends Phaser.GameObjects.Container {
 		option_4.name = "option_4";
 		option_4.setOrigin(0.5, 0.5);
 		option_4.text = "option4";
-		option_4.setStyle({ "align": "center", "fontSize": "30px", "fontStyle": "bold", "maxLines":2});
+		option_4.setStyle({ "align": "center", "fontSize": "30px", "fontStyle": "bold", "maxLines": 2 });
 		option_4.setWordWrapWidth(300);
 		this.add(option_4);
 
@@ -151,6 +151,16 @@ class Quiz extends Phaser.GameObjects.Container {
 			(question.aOptions[i].sOptions.length > 12) ? eval("this.option_" + (1 + i)).setScale(0.7) : eval("this.option_" + (1 + i)).setScale(1);
 			eval("this.option_" + (1 + i)).text = question.aOptions[i].sOptions;
 		});
+	}
+	disableInteractiveOptions = () => {
+		this.container_optionbtn.list.forEach((option) => {
+			option.disableInteractive();
+		})
+	}
+	setInteractiveOptions = () => {
+		this.container_optionbtn.list.forEach((option) => {
+			option.setInteractive();
+		})
 	}
 	/* END-USER-CODE */
 }

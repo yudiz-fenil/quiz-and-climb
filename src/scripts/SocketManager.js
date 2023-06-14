@@ -17,7 +17,6 @@ class SocketManager {
     this.socket.on("connect", () => {
       this.ownSocketId = this.socket.id;
       console.log("Connected to Socket :: ", this.socket.id);
-      console.log("Socket URL :: ", this.sRootUrl);
     });
     this.socket.on("disconnect", () => {
       console.log("Disconnected from Socket");
@@ -55,7 +54,7 @@ class SocketManager {
   }
 
   onReceivedData(data) {
-    console.log(data.sEventName, data);
+    // console.log(data.sEventName, data);
     switch (data.sEventName) {
       case "resUserJoined":
         this.oScene.oPlayerManager.setUserData(data.oData);
@@ -75,15 +74,12 @@ class SocketManager {
         this.oScene.oQuizeManager.resAnswer(data.oData);
         break;
       case "resDiceTurn":
-        console.log(data.sEventName, data);
         this.oScene.oPlayerManager.setDiceTurn(data.oData);
         break;
       case "resRollDice":
-        console.log(data.sEventName, data);
         this.oScene.oPlayerManager.setRollDice(data.oData);
         break;
       case "resTurnMissed":
-        console.log("%c resTurnMissed :: ", "background: red", data);
         this.oScene.oPlayerManager.setTurnMissed(data.oData);
         break;
     }
