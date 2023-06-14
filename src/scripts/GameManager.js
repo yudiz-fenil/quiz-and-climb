@@ -5,10 +5,10 @@ class GameManager {
         this.ownPlayerId = " ";
         this.isownTurn = false;
         this.aPawns = [
-            { position: -1, finalPosition: -1, pawn: this.oScene.oPlayerManager.player1 },
-            { position: -1, finalPosition: -1, pawn: this.oScene.oPlayerManager.player2 },
-            { position: -1, finalPosition: -1, pawn: this.oScene.oPlayerManager.player3 },
-            { position: -1, finalPosition: -1, pawn: this.oScene.oPlayerManager.player4 },
+            { position: -1, finalPosition: -1, pawn: null },
+            { position: -1, finalPosition: -1, pawn: null },
+            { position: -1, finalPosition: -1, pawn: null },
+            { position: -1, finalPosition: -1, pawn: null },
         ]
         this.aSnakeLadder = [
             // ladders

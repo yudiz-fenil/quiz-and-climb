@@ -24,6 +24,7 @@ class PlayerManager {
       this.player1.setHealth(nTurnMissed);
       this.player1.setName(iUserId);
       this.player1.setScore(oScore.nTotalScore);
+      this.oScene.oGameManager.aPawns[0].pawn = this.player1.pawn
       this.oScene.container_players.add(this.player1);
     }
     else {
@@ -36,6 +37,7 @@ class PlayerManager {
           this.player2.setHealth(nTurnMissed);
           this.player2.setScore(oScore.nTotalScore);
           this.player2.setPlayerUI("player-four-background", "player-avtar-02", "player-four-heart", "red-pawn", "red-shadow");
+          this.oScene.oGameManager.aPawns[1].pawn = this.player2.pawn
           this.oScene.container_players.add(this.player2);
           break;
         case 3:
@@ -46,6 +48,7 @@ class PlayerManager {
           this.player3.setHealth(nTurnMissed);
           this.player3.setScore(oScore.nTotalScore);
           this.player3.setPlayerUI("player-three-background", "player-avtar-03", "player-three-heart", "blue-pawn", "blue-shadow");
+          this.oScene.oGameManager.aPawns[2].pawn = this.player3.pawn
           this.oScene.container_players.add(this.player3);
           break;
         case 4:
@@ -56,6 +59,7 @@ class PlayerManager {
           this.player4.setHealth(nTurnMissed);
           this.player4.setScore(oScore.nTotalScore);
           this.player4.setPlayerUI("player-two-background", "player-avtar-02", "player-two-heart", "yellow-pawn", "yellow-shadow");
+          this.oScene.oGameManager.aPawns[3].pawn = this.player4.pawn
           this.oScene.container_players.add(this.player4);
           break;
 
@@ -84,6 +88,7 @@ class PlayerManager {
       case this.player1.name:
         this.oScene.dice.dice_bgs.setTexture("green-bg")
         this.oScene.container_quiz.setVisible(true);
+        this.oScene.quiz.setInteractiveOptions();
         this.player1.playShadowAnimation("green-shadow");
         break;
       case this.player2.name:
