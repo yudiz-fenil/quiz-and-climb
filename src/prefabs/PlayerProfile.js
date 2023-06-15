@@ -171,19 +171,22 @@ class PlayerProfile extends Phaser.GameObjects.Container {
 		if (nDestination > 99) return false;
 		let s = oToken.position + 1;
 		for (let i = 1; i <= nMove; i++) {
+			const posX = this.oScene.game.container_map_board.list[s].x - this.x
+			const posY = this.oScene.game.container_map_board.list[s].y - this.y;
 			this.oScene.tweens.add({
 				targets: this.pawn,
-				x: this.oScene.game.container_map_board.list[s].x - this.x,
-				y: this.oScene.game.container_map_board.list[s].y - this.y,
+				x: posX,
+				y: posY,
 				ease: "Power3",
 				duration: this.nPawnMoveDelay,
 				delay: delay,
 				onComplete: () => {
+					this.pawn.setScale(1, 1);
 					oToken.position = s;
 					if (i == nMove) {
 						this.aPawns[nPawn].finalPosition = nDestination;
 						if (!this.checkSnakeLadder(nPawn, nDestination, oScore)) {
-							this.checkForSamePosition(s);
+							this.checkForSamePosition(s, posX, posY);
 						}
 					}
 				},
@@ -206,7 +209,7 @@ class PlayerProfile extends Phaser.GameObjects.Container {
 		}
 		return false;
 	}
-	checkForSamePosition(nDestination) {
+	checkForSamePosition(nDestination, posX, posY) {
 		if (nDestination < 0) return;
 		const aPawnsWithSamePosition = [];
 		for (let i = 0; i < this.aPawns.length; i++) {
@@ -215,36 +218,40 @@ class PlayerProfile extends Phaser.GameObjects.Container {
 				aPawnsWithSamePosition.push(oPawn.pawn);
 			}
 		}
-		this.arrangePawns(aPawnsWithSamePosition, nDestination);
+		// this.arrangePawns(aPawnsWithSamePosition, nDestination, posX, posY);
 	}
-	arrangePawns(aPawns, nDestination) {
-		let posX = this.oScene.game.container_map_board.list[nDestination].x - this.x;
-		let posY = this.oScene.game.container_map_board.list[nDestination].y - this.y;
+	arrangePawns(aPawns, nDestination, posX, posY) {
+		// let posX = this.oScene.game.container_map_board.list[nDestination].x - this.x;
+		// let posY = this.oScene.game.container_map_board.list[nDestination].y - this.y;
 		switch (aPawns.length) {
 			case 1:
-				console.log('texture', aPawns[0].texture.key, 'posX', posX, 'posY', posY);
+				console.log('case 1', aPawns[0].texture.key, 'posX', posX, 'posY', posY);
 				aPawns[0].setScale(1, 1);
 				aPawns[0].setPosition(posX, posY);
 				break;
 			case 2:
 				aPawns.forEach((pawn) => {
-					console.log('texture', pawn.texture.key, 'posX', posX, 'posY', posY);
+					console.log('case 2', pawn.texture.key, 'posX', posX, 'posY', posY);
 					pawn.setScale(0.8, 0.8);
-					pawn.setPosition(posX - 20, posY);
+					pawn.x = posX - 20;
+					pawn.y = posY;
+					// pawn.setPosition(posX - 20, posY);
 					posX += 40;
 				});
 				break;
 			case 3:
-				console.log('texture', pawn.texture.key, 'posX', posX, 'posY', posY);
 				aPawns.forEach((pawn) => {
+					console.log('case 3', pawn.texture.key, 'posX', posX, 'posY', posY);
 					pawn.setScale(0.7, 0.7);
-					pawn.setPosition(posX - 30, posY);
+					pawn.x = posX - 30;
+					pawn.y = posY;
+					// pawn.setPosition(posX - 30, posY);
 					posX += 30;
 				});
 				break;
 			case 4:
-				console.log('texture', pawn.texture.key, 'posX', posX, 'posY', posY);
 				aPawns.forEach((pawn, i) => {
+					console.log('case 4', pawn.texture.key, 'posX', posX, 'posY', posY);
 					pawn.setScale(0.6, 0.6);
 					if (i % 2) {
 						aPawns[1].setPosition(posX + 15, posY - 15);

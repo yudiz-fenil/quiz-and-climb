@@ -49,7 +49,7 @@ class GameManager {
                 });
             }
         } else {
-            // window.close();
+            window.close();
         }
     }
 }
