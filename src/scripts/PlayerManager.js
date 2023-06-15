@@ -114,8 +114,12 @@ class PlayerManager {
 
   setTurnMissed = ({ nTurnMissed, iUserId, nMaxTurnMissAllowed }) => {
     this.oScene.dice.dice.disableInteractive();
-    if (nTurnMissed == 3) {
-      window.close();
+    if (nTurnMissed == nMaxTurnMissAllowed) {
+      this.oScene.popup_miss_turns.setVisible(true);
+      this.oScene.popup_bg.setInteractive().on('pointerdown', () => { })
+      this.oScene.btn_okay.setInteractive().on('pointerdown', () => {
+        window.close();
+      })
     }
     switch (iUserId) {
       case this.player1.name:
@@ -154,6 +158,18 @@ class PlayerManager {
       });
     }
     this.setTotalScore(iUserId, oScore);
+  }
+  setSkipRollDice = ({ iUserId, nDice, oScore }) => {
+    this.oScene.dice.intervalTimerReset();
+    if (this.oScene.oGameManager.ownPlayerId == iUserId) {
+      this.oScene.dice.dice.setTexture("dice", nDice - 1)
+    } else {
+      this.oScene.dice.dice.anims.play("dice-roll", true).once('animationcomplete', () => {
+        this.oScene.dice.dice.setTexture("dice", nDice - 1)
+      });
+    }
+    this.setTotalScore(iUserId, oScore);
+    this.oScene.showSkipTurnPopup();
   }
 
   setTotalScore(iUserId, oScore) {

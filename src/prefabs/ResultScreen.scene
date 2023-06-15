@@ -14,8 +14,6 @@
             "id": "d4636bcd-4096-4951-b051-e8bb0874c111",
             "label": "container_1",
             "components": [],
-            "x": 4,
-            "y": -57,
             "list": [
                 {
                     "type": "Image",
@@ -25,7 +23,6 @@
                     "texture": {
                         "key": "Player-name-board"
                     },
-                    "y": 57,
                     "scaleX": 0.7,
                     "scaleY": 0.7
                 },
@@ -35,11 +32,9 @@
                     "label": "playerName",
                     "scope": "CLASS",
                     "components": [],
-                    "x": -241,
-                    "y": 55,
-                    "originX": 0.5,
+                    "x": -325,
                     "originY": 0.5,
-                    "text": "player!",
+                    "text": "player! vfhd00",
                     "fontSize": "30px"
                 },
                 {
@@ -48,8 +43,6 @@
                     "label": "playerScore",
                     "scope": "CLASS",
                     "components": [],
-                    "x": 34,
-                    "y": 55,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "255",
@@ -62,7 +55,6 @@
                     "scope": "CLASS",
                     "components": [],
                     "x": 248,
-                    "y": 55,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "800",
