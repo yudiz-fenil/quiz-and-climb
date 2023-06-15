@@ -27,11 +27,11 @@ class Quiz extends Phaser.GameObjects.Container {
 		this.add(box_Pop_Up);
 
 		// queTxt
-		const queTxt = scene.add.text(2, -135, "", {});
+		const queTxt = scene.add.text(2, -150, "", {});
 		queTxt.setOrigin(0.5, 0);
 		queTxt.text = "iufgirueh ghruehi ihr ei re ger ghie iogheio frhiogrei gih eriog ierhgi heighie hgie ge gyeio i";
-		queTxt.setStyle({ "align": "center", "fontSize": "35px", "fontStyle": "bold" });
-		queTxt.setWordWrapWidth(940);
+		queTxt.setStyle({ "align": "center", "fontSize": "40px", "fontStyle": "bold" });
+		queTxt.setWordWrapWidth(940, true);
 		this.add(queTxt);
 
 		// container_optionbtn
@@ -45,7 +45,7 @@ class Quiz extends Phaser.GameObjects.Container {
 		container_optionbtn.add(optionOneBox);
 
 		// optionTwoBox
-		const optionTwoBox = scene.add.image(0, 86, "MCQ-Question-Answer-box");
+		const optionTwoBox = scene.add.image(0, 109, "MCQ-Question-Answer-box");
 		optionTwoBox.scaleX = 0.6;
 		optionTwoBox.scaleY = 0.7;
 		container_optionbtn.add(optionTwoBox);
@@ -57,7 +57,7 @@ class Quiz extends Phaser.GameObjects.Container {
 		container_optionbtn.add(optionThreeBox);
 
 		// optionFourBox
-		const optionFourBox = scene.add.image(472, 86, "MCQ-Question-Answer-box");
+		const optionFourBox = scene.add.image(472, 109, "MCQ-Question-Answer-box");
 		optionFourBox.scaleX = 0.6;
 		optionFourBox.scaleY = 0.7;
 		container_optionbtn.add(optionFourBox);
@@ -67,17 +67,17 @@ class Quiz extends Phaser.GameObjects.Container {
 		option_1.name = "option_1";
 		option_1.setOrigin(0.5, 0.5);
 		option_1.text = "option 1";
-		option_1.setStyle({ "align": "center", "fontSize": "30px", "fontStyle": "bold", "maxLines": 2 });
-		option_1.setWordWrapWidth(300);
+		option_1.setStyle({ "align": "center", "fontSize": "35px", "fontStyle": "bold", "maxLines":2});
+		option_1.setWordWrapWidth(300, true);
 		this.add(option_1);
 
 		// option_2
-		const option_2 = scene.add.text(-237, 106, "", {});
+		const option_2 = scene.add.text(-237, 129, "", {});
 		option_2.name = "option_2";
 		option_2.setOrigin(0.5, 0.5);
 		option_2.text = "option2";
-		option_2.setStyle({ "align": "center", "fontSize": "30px", "fontStyle": "bold", "maxLines": 2 });
-		option_2.setWordWrapWidth(300);
+		option_2.setStyle({ "align": "center", "fontSize": "35px", "fontStyle": "bold", "maxLines":2});
+		option_2.setWordWrapWidth(300, true);
 		this.add(option_2);
 
 		// option_3
@@ -85,17 +85,17 @@ class Quiz extends Phaser.GameObjects.Container {
 		option_3.name = "option_3";
 		option_3.setOrigin(0.5, 0.5);
 		option_3.text = "option3";
-		option_3.setStyle({ "align": "center", "fontSize": "30px", "fontStyle": "bold", "maxLines": 2 });
-		option_3.setWordWrapWidth(300);
+		option_3.setStyle({ "align": "center", "fontSize": "35px", "fontStyle": "bold", "maxLines":2});
+		option_3.setWordWrapWidth(300, true);
 		this.add(option_3);
 
 		// option_4
-		const option_4 = scene.add.text(247, 104, "", {});
+		const option_4 = scene.add.text(247, 127, "", {});
 		option_4.name = "option_4";
 		option_4.setOrigin(0.5, 0.5);
 		option_4.text = "option4";
-		option_4.setStyle({ "align": "center", "fontSize": "30px", "fontStyle": "bold", "maxLines": 2 });
-		option_4.setWordWrapWidth(300);
+		option_4.setStyle({ "align": "center", "fontSize": "35px", "fontStyle": "bold", "maxLines":2});
+		option_4.setWordWrapWidth(300, true);
 		this.add(option_4);
 
 		this.quizGreenBox = quizGreenBox;

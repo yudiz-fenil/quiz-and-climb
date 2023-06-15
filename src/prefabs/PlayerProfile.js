@@ -149,7 +149,7 @@ class PlayerProfile extends Phaser.GameObjects.Container {
 			heart.setTexture(heartTexture);
 		});
 	};
-	setUsername = (username) => this.text_username.setText(username.length > 20 ? username.slice(0, 19) + "..." : username);
+	setUsername = (username) => this.text_username.setText(username.length > 17 ? username.slice(0, 16) + "..." : username);
 	setScore = (score) => this.text_score.setText(score);
 	setHealth = (nTurnMissed) => {
 		for (let i = 0; i < nTurnMissed; i++) {
