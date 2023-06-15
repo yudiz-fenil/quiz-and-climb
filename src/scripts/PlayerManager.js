@@ -41,7 +41,7 @@ class PlayerManager {
           this.oScene.container_players.add(this.player2);
           break;
         case 3:
-          this.player3 = new PlayerProfile(this.oScene, 874, 325);
+          this.player3 = new PlayerProfile(this.oScene, 854, 325);
           this.player3.setRightSidePLayer();
           this.player3.setUsername(sUserName);
           this.player3.setName(iUserId);
@@ -52,7 +52,7 @@ class PlayerManager {
           this.oScene.container_players.add(this.player3);
           break;
         case 4:
-          this.player4 = new PlayerProfile(this.oScene, 874, 1669);
+          this.player4 = new PlayerProfile(this.oScene, 854, 1669);
           this.player4.setRightSidePLayer();
           this.player4.setUsername(sUserName);
           this.player4.setName(iUserId);
@@ -139,20 +139,7 @@ class PlayerManager {
     }
     this.oScene.container_quiz.visible = false;
     this.oScene.dice.resTurnTimer(ttl, nTotalTurnTime);
-    switch (iUserId) {
-      case this.player1.name:
-        this.player1.setScore(oScore.nTotalScore);
-        break;
-      case this.player2.name:
-        this.player2.setScore(oScore.nTotalScore);
-        break;
-      case this.player3.name:
-        this.player3.setScore(oScore.nTotalScore);
-        break;
-      case this.player4.name:
-        this.player4.setScore(oScore.nTotalScore);
-        break;
-    }
+    this.setTotalScore(iUserId, oScore);
   }
 
   setRollDice = ({ iUserId, nDice, oScore }) => {
@@ -166,6 +153,10 @@ class PlayerManager {
         this.movePlayerPawn(iUserId, nDice, oScore);
       });
     }
+    this.setTotalScore(iUserId, oScore);
+  }
+
+  setTotalScore(iUserId, oScore) {
     switch (iUserId) {
       case this.player1.name:
         this.player1.setScore(oScore.nTotalScore);

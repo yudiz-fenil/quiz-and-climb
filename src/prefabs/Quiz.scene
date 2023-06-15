@@ -63,13 +63,14 @@
                     "scope": "CLASS",
                     "components": [],
                     "x": 2,
-                    "y": -135,
+                    "y": -150,
                     "originX": 0.5,
                     "text": "iufgirueh ghruehi ihr ei re ger ghie iogheio frhiogrei gih eriog ierhgi heighie hgie ge gyeio i",
                     "align": "center",
-                    "fontSize": "35px",
+                    "fontSize": "40px",
                     "fontStyle": "bold",
-                    "wordWrapWidth": 940
+                    "wordWrapWidth": 940,
+                    "wordWrapUseAdvanced": true
                 },
                 {
                     "type": "Container",
@@ -101,7 +102,7 @@
                             "texture": {
                                 "key": "MCQ-Question-Answer-box"
                             },
-                            "y": 86,
+                            "y": 109,
                             "scaleX": 0.6,
                             "scaleY": 0.7
                         },
@@ -129,7 +130,7 @@
                                 "key": "MCQ-Question-Answer-box"
                             },
                             "x": 472,
-                            "y": 86,
+                            "y": 109,
                             "scaleX": 0.6,
                             "scaleY": 0.7
                         }
@@ -148,10 +149,11 @@
                     "originY": 0.5,
                     "text": "option 1",
                     "align": "center",
-                    "fontSize": "30px",
+                    "fontSize": "35px",
                     "fontStyle": "bold",
                     "maxLines": 2,
-                    "wordWrapWidth": 300
+                    "wordWrapWidth": 300,
+                    "wordWrapUseAdvanced": true
                 },
                 {
                     "type": "Text",
@@ -161,15 +163,16 @@
                     "scope": "CLASS",
                     "components": [],
                     "x": -237,
-                    "y": 106,
+                    "y": 129,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "option2",
                     "align": "center",
-                    "fontSize": "30px",
+                    "fontSize": "35px",
                     "fontStyle": "bold",
                     "maxLines": 2,
-                    "wordWrapWidth": 300
+                    "wordWrapWidth": 300,
+                    "wordWrapUseAdvanced": true
                 },
                 {
                     "type": "Text",
@@ -184,10 +187,11 @@
                     "originY": 0.5,
                     "text": "option3",
                     "align": "center",
-                    "fontSize": "30px",
+                    "fontSize": "35px",
                     "fontStyle": "bold",
                     "maxLines": 2,
-                    "wordWrapWidth": 300
+                    "wordWrapWidth": 300,
+                    "wordWrapUseAdvanced": true
                 },
                 {
                     "type": "Text",
@@ -197,15 +201,16 @@
                     "scope": "CLASS",
                     "components": [],
                     "x": 247,
-                    "y": 104,
+                    "y": 127,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "option4",
                     "align": "center",
-                    "fontSize": "30px",
+                    "fontSize": "35px",
                     "fontStyle": "bold",
                     "maxLines": 2,
-                    "wordWrapWidth": 300
+                    "wordWrapWidth": 300,
+                    "wordWrapUseAdvanced": true
                 }
             ]
         }

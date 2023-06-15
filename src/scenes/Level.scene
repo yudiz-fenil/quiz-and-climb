@@ -119,8 +119,83 @@
                     "texture": {
                         "key": "setting-button"
                     },
-                    "x": 982,
-                    "y": 91
+                    "x": 100,
+                    "y": 100
+                },
+                {
+                    "type": "Image",
+                    "id": "caee2dc6-5ae8-4206-9a20-6011a4bfb87d",
+                    "label": "pot_background",
+                    "components": [],
+                    "texture": {
+                        "key": "pot-background"
+                    },
+                    "x": 922,
+                    "y": 79
+                },
+                {
+                    "type": "Image",
+                    "id": "8d0d2de9-d8f7-4139-b3ba-05dcfaca649c",
+                    "label": "game_timer",
+                    "components": [],
+                    "texture": {
+                        "key": "game-timer"
+                    },
+                    "x": 540,
+                    "y": 92
+                },
+                {
+                    "type": "Text",
+                    "id": "c21579a0-a921-4827-bcb5-19868dceb2dd",
+                    "label": "txt_time",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 566,
+                    "y": 99,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "00:00",
+                    "align": "center",
+                    "fontSize": "40px",
+                    "fontStyle": "bold",
+                    "maxLines": 2,
+                    "wordWrapWidth": 300
+                },
+                {
+                    "type": "Text",
+                    "id": "08994403-96ff-4179-91fe-357fe6cfa03c",
+                    "label": "txt_pot",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 926,
+                    "y": 99,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "₹ 3.2",
+                    "align": "center",
+                    "fontSize": "40px",
+                    "fontStyle": "bold",
+                    "maxLines": 2,
+                    "wordWrapWidth": 300
+                },
+                {
+                    "type": "Text",
+                    "id": "7bbf2f92-5d8b-4d2a-b410-2f2335aec50b",
+                    "label": "txt",
+                    "useGameObjectName": true,
+                    "components": [],
+                    "x": 926,
+                    "y": 44,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "POT",
+                    "align": "center",
+                    "fontSize": "40px",
+                    "fontStyle": "bold",
+                    "maxLines": 2,
+                    "wordWrapWidth": 300
                 }
             ]
         }

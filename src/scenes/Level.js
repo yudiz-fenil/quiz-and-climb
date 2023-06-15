@@ -54,8 +54,43 @@ class Level extends Phaser.Scene {
 		const container_menu = this.add.container(0, 0);
 
 		// btn_settings
-		const btn_settings = this.add.image(982, 91, "setting-button");
+		const btn_settings = this.add.image(100, 100, "setting-button");
 		container_menu.add(btn_settings);
+
+		// pot_background
+		const pot_background = this.add.image(922, 79, "pot-background");
+		container_menu.add(pot_background);
+
+		// game_timer
+		const game_timer = this.add.image(540, 92, "game-timer");
+		container_menu.add(game_timer);
+
+		// txt_time
+		const txt_time = this.add.text(566, 99, "", {});
+		txt_time.name = "txt_time";
+		txt_time.setOrigin(0.5, 0.5);
+		txt_time.text = "00:00";
+		txt_time.setStyle({ "align": "center", "fontSize": "40px", "fontStyle": "bold", "maxLines":2});
+		txt_time.setWordWrapWidth(300);
+		container_menu.add(txt_time);
+
+		// txt_pot
+		const txt_pot = this.add.text(926, 99, "", {});
+		txt_pot.name = "txt_pot";
+		txt_pot.setOrigin(0.5, 0.5);
+		txt_pot.text = "₹ 3.2";
+		txt_pot.setStyle({ "align": "center", "fontSize": "40px", "fontStyle": "bold", "maxLines":2});
+		txt_pot.setWordWrapWidth(300);
+		container_menu.add(txt_pot);
+
+		// txt
+		const txt = this.add.text(926, 44, "", {});
+		txt.name = "txt";
+		txt.setOrigin(0.5, 0.5);
+		txt.text = "POT";
+		txt.setStyle({ "align": "center", "fontSize": "40px", "fontStyle": "bold", "maxLines":2});
+		txt.setWordWrapWidth(300);
+		container_menu.add(txt);
 
 		this.game = game;
 		this.dice = dice;
@@ -64,6 +99,8 @@ class Level extends Phaser.Scene {
 		this.quiz = quiz;
 		this.container_menu = container_menu;
 		this.btn_settings = btn_settings;
+		this.txt_time = txt_time;
+		this.txt_pot = txt_pot;
 
 		this.events.emit("scene-awake");
 	}
@@ -82,6 +119,10 @@ class Level extends Phaser.Scene {
 	container_menu;
 	/** @type {Phaser.GameObjects.Image} */
 	btn_settings;
+	/** @type {Phaser.GameObjects.Text} */
+	txt_time;
+	/** @type {Phaser.GameObjects.Text} */
+	txt_pot;
 
 	/* START-USER-CODE */
 
@@ -117,7 +158,7 @@ class Level extends Phaser.Scene {
 		this.oSocketManager.emit('reqAnswer', { iOptionId: iOptionId, iQuestionId: this.oQuizeManager.questionId });
 	}
 	reqRollDice = () => this.oSocketManager.emit("reqRollDice", {});
-	reqPlayerPosition = (nIndex) => this.oSocketManager.emit("reqPlayerPosition", { nIndex });
+	// reqPlayerPosition = (nIndex) => this.oSocketManager.emit("reqPlayerPosition", { nIndex });
 	setQuestonTimer = ({ nTotalTurnTime, ttl }) => {
 		this.timeLeft = nTotalTurnTime / 1000;
 		this.time1 = nTotalTurnTime / 1000;
@@ -144,6 +185,20 @@ class Level extends Phaser.Scene {
 			callbackScope: this,
 			loop: true
 		});
+	}
+	setGameTimer({ nTotalGameTime }) {
+		let countdown = setInterval(() => {
+			let minutes = Math.floor(nTotalGameTime / 60000);
+			let seconds = Math.floor((nTotalGameTime % 60000) / 1000);
+			this.txt_time.setText(
+				`${minutes}:${seconds < 10 ? "0" : ""}${seconds}`
+			);
+			if (nTotalGameTime <= 0) {
+				clearInterval(countdown);
+			} else {
+				nTotalGameTime -= 1000;
+			}
+		}, 1000);
 	}
 	/* END-USER-CODE */
 }
