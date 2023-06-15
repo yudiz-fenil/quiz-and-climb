@@ -115,11 +115,11 @@ class PlayerManager {
   setTurnMissed = ({ nTurnMissed, iUserId, nMaxTurnMissAllowed }) => {
     this.oScene.dice.dice.disableInteractive();
     if (nTurnMissed == 3) {
-      // window.close();
+      window.close();
     }
     switch (iUserId) {
       case this.player1.name:
-        this.player1.setHealth(nTurnMissed)
+        this.player1.setHealth(nTurnMissed);
         break;
       case this.player2.name:
         this.player2.setHealth(nTurnMissed);

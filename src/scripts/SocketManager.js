@@ -54,7 +54,7 @@ class SocketManager {
   }
 
   onReceivedData(data) {
-    // console.log(data.sEventName, data);
+    console.log(data.sEventName, data);
     switch (data.sEventName) {
       case "resUserJoined":
         this.oScene.oPlayerManager.setUserData(data.oData);
