@@ -80,6 +80,9 @@ class SocketManager {
       case "resRollDice":
         this.oScene.oPlayerManager.setRollDice(data.oData);
         break;
+      case "skipRollDice":
+        this.oScene.oPlayerManager.setSkipRollDice(data.oData);
+        break;
       case "resTurnMissed":
         this.oScene.oPlayerManager.setTurnMissed(data.oData);
         break;

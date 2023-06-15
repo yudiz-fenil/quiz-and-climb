@@ -53,7 +53,7 @@
             "scope": "CLASS",
             "components": [],
             "x": 540,
-            "y": 1633,
+            "y": 1669,
             "nestedPrefabs": []
         },
         {
@@ -210,7 +210,8 @@
                 {
                     "type": "Rectangle",
                     "id": "2a5c29fb-9885-4cba-b33a-54568301048d",
-                    "label": "rectangle",
+                    "label": "resultscreen_bg",
+                    "scope": "CLASS",
                     "components": [],
                     "x": 545,
                     "y": 948,
@@ -238,13 +239,14 @@
                 {
                     "type": "Image",
                     "id": "b8518e0d-1af3-4240-bc69-1b3383a569e4",
-                    "label": "play_again_board",
+                    "label": "btn_go_to_home",
+                    "scope": "CLASS",
                     "components": [],
                     "texture": {
                         "key": "Play-again-board"
                     },
                     "x": 516,
-                    "y": 1217
+                    "y": 1231
                 },
                 {
                     "type": "Text",
@@ -253,7 +255,7 @@
                     "scope": "CLASS",
                     "components": [],
                     "x": 512,
-                    "y": 1210,
+                    "y": 1224,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "GO TO HOME",
@@ -263,8 +265,8 @@
                     "type": "Container",
                     "id": "f57d12c2-7d23-4bc6-9088-18280c7201bb",
                     "label": "container_text1",
-                    "scope": "CLASS",
                     "components": [],
+                    "y": -64,
                     "list": [
                         {
                             "type": "Text",
@@ -317,43 +319,630 @@
                     ]
                 },
                 {
-                    "type": "Image",
-                    "id": "986d1c8d-e390-4b72-a2e6-73e646d4cf04",
-                    "label": "trophy_01",
+                    "type": "Container",
+                    "id": "b7d1d3ce-7c9d-49ed-a7e4-32f506a3eb76",
+                    "label": "container_trophy",
                     "scope": "CLASS",
                     "components": [],
-                    "texture": {
-                        "key": "Trophy-01"
-                    },
-                    "x": 178,
-                    "y": 780,
-                    "visible": false
-                },
-                {
-                    "type": "Image",
-                    "id": "e01cd31d-a41d-4166-8e9e-2bb88b1cc140",
-                    "label": "trophy_02",
-                    "scope": "CLASS",
-                    "components": [],
-                    "texture": {
-                        "key": "Trophy-02"
-                    },
                     "x": 174,
-                    "y": 897,
-                    "visible": false
+                    "y": 738,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "986d1c8d-e390-4b72-a2e6-73e646d4cf04",
+                            "label": "trophy_01",
+                            "components": [],
+                            "texture": {
+                                "key": "Trophy-01"
+                            },
+                            "visible": false
+                        },
+                        {
+                            "type": "Image",
+                            "id": "e01cd31d-a41d-4166-8e9e-2bb88b1cc140",
+                            "label": "trophy_02",
+                            "components": [],
+                            "texture": {
+                                "key": "Trophy-02"
+                            },
+                            "y": 117,
+                            "visible": false
+                        },
+                        {
+                            "type": "Image",
+                            "id": "477f89a8-988d-4fe3-8041-535e989ca076",
+                            "label": "trophy_03",
+                            "components": [],
+                            "texture": {
+                                "key": "Trophy-03"
+                            },
+                            "y": 232,
+                            "visible": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "43d12a4c-51b7-4a23-934d-642a88acf8e2",
+            "label": "popup_settings",
+            "scope": "CLASS",
+            "components": [],
+            "visible": false,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "41446161-b720-45de-ae3c-c565f4693e77",
+                    "label": "settings_screen_bg",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 540,
+                    "y": 960,
+                    "scaleX": 9,
+                    "scaleY": 15,
+                    "alpha": 0.8,
+                    "isFilled": true,
+                    "fillColor": "#131313",
+                    "width": 128,
+                    "height": 128
                 },
                 {
                     "type": "Image",
-                    "id": "477f89a8-988d-4fe3-8041-535e989ca076",
-                    "label": "trophy_03",
+                    "id": "998760a8-f060-4ae1-a13c-8de99714e5b4",
+                    "label": "setting_pop_up_board",
+                    "components": [],
+                    "texture": {
+                        "key": "setting-pop-up-board"
+                    },
+                    "x": 540,
+                    "y": 960
+                },
+                {
+                    "type": "Image",
+                    "id": "6a3d7f90-f841-4960-ad7b-fd4b94e44d72",
+                    "label": "setting_pop_up",
+                    "components": [],
+                    "texture": {
+                        "key": "setting-pop-up"
+                    },
+                    "x": 540,
+                    "y": 586
+                },
+                {
+                    "type": "Text",
+                    "id": "f308701a-2633-40f6-9960-589287f1aef1",
+                    "label": "txt_1",
+                    "useGameObjectName": true,
+                    "components": [],
+                    "x": 577,
+                    "y": 583,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Setting",
+                    "align": "center",
+                    "fontSize": "40px",
+                    "fontStyle": "bold",
+                    "maxLines": 2,
+                    "wordWrapWidth": 300
+                },
+                {
+                    "type": "Text",
+                    "id": "ad487570-1ee7-419a-a7e4-c5b35265f9d5",
+                    "label": "txt_2",
+                    "useGameObjectName": true,
+                    "components": [],
+                    "x": 377,
+                    "y": 893,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Sound",
+                    "align": "center",
+                    "fontSize": "80px",
+                    "fontStyle": "bold",
+                    "maxLines": 2,
+                    "wordWrapWidth": 300
+                },
+                {
+                    "type": "Text",
+                    "id": "d870c8eb-80fb-4872-a99f-c1819c100e2b",
+                    "label": "txt_3",
+                    "useGameObjectName": true,
+                    "components": [],
+                    "x": 377,
+                    "y": 766,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Music",
+                    "align": "center",
+                    "fontSize": "80px",
+                    "fontStyle": "bold",
+                    "maxLines": 2,
+                    "wordWrapWidth": 300
+                },
+                {
+                    "type": "Image",
+                    "id": "a278fa33-9702-43d4-a635-0617e2d0ef5d",
+                    "label": "sound_icon",
+                    "components": [],
+                    "texture": {
+                        "key": "sound-icon"
+                    },
+                    "x": 202,
+                    "y": 766
+                },
+                {
+                    "type": "Image",
+                    "id": "eb25777c-da33-41c1-bc59-e4de3f7d9d22",
+                    "label": "music_icon",
+                    "components": [],
+                    "texture": {
+                        "key": "music-icon"
+                    },
+                    "x": 202,
+                    "y": 893
+                },
+                {
+                    "type": "Image",
+                    "id": "8b2ce779-c14d-4119-b170-d871841df558",
+                    "label": "sound_switch",
+                    "components": [],
+                    "texture": {
+                        "key": "on-switch"
+                    },
+                    "x": 810,
+                    "y": 766
+                },
+                {
+                    "type": "Image",
+                    "id": "3d887e40-fb0b-47cf-9424-935e22fb519e",
+                    "label": "music_switch",
+                    "components": [],
+                    "texture": {
+                        "key": "on-switch"
+                    },
+                    "x": 810,
+                    "y": 893
+                },
+                {
+                    "type": "Image",
+                    "id": "a79ad35a-7f3c-43ee-84f5-1742b8a89b32",
+                    "label": "how_to_play_board_button",
+                    "components": [],
+                    "texture": {
+                        "key": "how-to-play-board-button"
+                    },
+                    "x": 540,
+                    "y": 1047
+                },
+                {
+                    "type": "Text",
+                    "id": "fb1c34a5-2be2-46e2-9f36-c5fa391c1b21",
+                    "label": "txt_4",
+                    "useGameObjectName": true,
+                    "components": [],
+                    "x": 586,
+                    "y": 1048,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "How to play?",
+                    "align": "center",
+                    "fontSize": "55px",
+                    "fontStyle": "bold",
+                    "maxLines": 2,
+                    "wordWrapWidth": 1000
+                },
+                {
+                    "type": "Image",
+                    "id": "c141501b-7956-4599-80af-6641773e30e6",
+                    "label": "question_icon",
+                    "components": [],
+                    "texture": {
+                        "key": "question-icon"
+                    },
+                    "x": 349,
+                    "y": 1048
+                },
+                {
+                    "type": "Image",
+                    "id": "8c03c084-6618-40d5-ae6c-85dafaa4d119",
+                    "label": "btn_leave_game",
                     "scope": "CLASS",
                     "components": [],
                     "texture": {
-                        "key": "Trophy-03"
+                        "key": "leave-game-board"
+                    },
+                    "x": 540,
+                    "y": 1258
+                },
+                {
+                    "type": "Text",
+                    "id": "06395433-f3ae-4c7e-8011-3e086204a238",
+                    "label": "txt_5",
+                    "useGameObjectName": true,
+                    "components": [],
+                    "x": 540,
+                    "y": 1258,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "LEAVE GAME",
+                    "align": "center",
+                    "fontSize": "55px",
+                    "fontStyle": "bold",
+                    "maxLines": 2,
+                    "wordWrapWidth": 1000
+                },
+                {
+                    "type": "Image",
+                    "id": "99948ba9-b10a-43f6-aa6b-951d62fa2f79",
+                    "label": "btn_close_setting",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "close-button"
+                    },
+                    "x": 1005,
+                    "y": 473
+                },
+                {
+                    "type": "Image",
+                    "id": "f8278e23-d7d8-4eeb-84f6-d9af01568c7a",
+                    "label": "close_icon",
+                    "components": [],
+                    "texture": {
+                        "key": "close-icon"
+                    },
+                    "x": 1004,
+                    "y": 467
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "61456cb1-33e0-4019-9ea7-14a3f771c272",
+            "label": "popup_leave",
+            "scope": "CLASS",
+            "components": [],
+            "visible": false,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "593592ef-7404-416c-bf29-3370132147e0",
+                    "label": "leave_popup_bg",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 540,
+                    "y": 960,
+                    "scaleX": 9,
+                    "scaleY": 15,
+                    "alpha": 0.8,
+                    "isFilled": true,
+                    "fillColor": "#131313",
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Image",
+                    "id": "38d115ba-cb82-42ad-8468-e46d381c548a",
+                    "label": "leave_popup_bg_1",
+                    "components": [],
+                    "texture": {
+                        "key": "leave-popup-bg"
+                    },
+                    "x": 540,
+                    "y": 960
+                },
+                {
+                    "type": "Image",
+                    "id": "d9eec77c-386a-4957-9ea0-3778014d583c",
+                    "label": "quit_button",
+                    "components": [],
+                    "texture": {
+                        "key": "quit-button"
+                    },
+                    "x": 540,
+                    "y": 727
+                },
+                {
+                    "type": "Image",
+                    "id": "b8b35084-a569-4622-bafc-1927564db174",
+                    "label": "btn_cancle",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "btn-cancle"
+                    },
+                    "x": 690,
+                    "y": 1046
+                },
+                {
+                    "type": "Image",
+                    "id": "7c8dd79c-0bc1-48e4-898a-f391ec8b75e1",
+                    "label": "btn_confirm_leave",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "btn-confirm"
+                    },
+                    "x": 390,
+                    "y": 1046
+                },
+                {
+                    "type": "Image",
+                    "id": "ffb9f73e-1226-42bb-a4fc-6860f7b15fbe",
+                    "label": "snake",
+                    "components": [],
+                    "texture": {
+                        "key": "snake"
                     },
                     "x": 180,
-                    "y": 1012,
-                    "visible": false
+                    "y": 1129
+                },
+                {
+                    "type": "Image",
+                    "id": "e4404ebc-aaf2-451b-9c9b-9abe0b2e02ae",
+                    "label": "snake_1",
+                    "components": [],
+                    "texture": {
+                        "key": "snake"
+                    },
+                    "x": 922,
+                    "y": 1129,
+                    "flipX": true
+                },
+                {
+                    "type": "Text",
+                    "id": "0270d982-945e-46a8-9648-110591d3acd9",
+                    "label": "txt_6",
+                    "useGameObjectName": true,
+                    "components": [],
+                    "x": 540,
+                    "y": 718,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "QUIT",
+                    "align": "center",
+                    "fontSize": "80px",
+                    "fontStyle": "bold",
+                    "color": "#fbdb00",
+                    "maxLines": 2,
+                    "wordWrapWidth": 1000
+                },
+                {
+                    "type": "Text",
+                    "id": "550f0e2c-31d5-40b0-95f2-f3461a4d5ef1",
+                    "label": "txt_7",
+                    "useGameObjectName": true,
+                    "components": [],
+                    "x": 539,
+                    "y": 879,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Are you sure you want to quit?",
+                    "align": "center",
+                    "fontSize": "60px",
+                    "maxLines": 2,
+                    "wordWrapWidth": 700
+                },
+                {
+                    "type": "Text",
+                    "id": "9f036536-71a8-49e3-ad66-ee700c29077f",
+                    "label": "txt_8",
+                    "useGameObjectName": true,
+                    "components": [],
+                    "x": 390,
+                    "y": 1046,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Yes",
+                    "align": "center",
+                    "fontSize": "80px",
+                    "maxLines": 2,
+                    "wordWrapWidth": 1000
+                },
+                {
+                    "type": "Text",
+                    "id": "876d42b3-3d98-4b1b-a71f-611ca416b725",
+                    "label": "txt_9",
+                    "useGameObjectName": true,
+                    "components": [],
+                    "x": 690,
+                    "y": 1046,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "No",
+                    "align": "center",
+                    "fontSize": "80px",
+                    "maxLines": 2,
+                    "wordWrapWidth": 1000
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "ffce7abc-e359-4e08-bbb4-33cb01b08c62",
+            "label": "popup_miss_turns",
+            "scope": "CLASS",
+            "components": [],
+            "visible": false,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "24f94aea-62e0-4988-b577-b98a66dc2497",
+                    "label": "popup_bg",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 540,
+                    "y": 960,
+                    "scaleX": 9,
+                    "scaleY": 15,
+                    "alpha": 0.8,
+                    "isFilled": true,
+                    "fillColor": "#131313",
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Image",
+                    "id": "df6d897e-c2f5-497c-a0c5-e5ce4a5ef7b2",
+                    "label": "popbg12",
+                    "components": [],
+                    "texture": {
+                        "key": "Box-Pop-Up"
+                    },
+                    "x": 540,
+                    "y": 960
+                },
+                {
+                    "type": "Image",
+                    "id": "3e8b3b10-74f9-4d97-8532-1c536f5d68dd",
+                    "label": "btn_okay",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "btn-okay"
+                    },
+                    "x": 540,
+                    "y": 1057
+                },
+                {
+                    "type": "Text",
+                    "id": "4121b535-46a9-419b-bb5f-52b3419fcbf4",
+                    "label": "txt_10",
+                    "useGameObjectName": true,
+                    "components": [],
+                    "x": 540,
+                    "y": 1054,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "OK",
+                    "align": "center",
+                    "fontSize": "55px",
+                    "maxLines": 2,
+                    "wordWrapWidth": 700
+                },
+                {
+                    "type": "Text",
+                    "id": "4e92cbf2-9a17-4b4d-8821-780a4db7e45b",
+                    "label": "txt_11",
+                    "useGameObjectName": true,
+                    "components": [],
+                    "x": 567,
+                    "y": 883,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "You missed all turns!",
+                    "align": "center",
+                    "fontSize": "60px",
+                    "maxLines": 2,
+                    "wordWrapWidth": 1000
+                },
+                {
+                    "type": "Image",
+                    "id": "6d31f9e8-4d02-42c5-bfe8-b71e10e9ec4c",
+                    "label": "life_skip_icon",
+                    "components": [],
+                    "texture": {
+                        "key": "life-skip-icon"
+                    },
+                    "x": 128,
+                    "y": 883
+                },
+                {
+                    "type": "Text",
+                    "id": "6f089d68-a485-40e0-8898-190593bdf474",
+                    "label": "txt_12",
+                    "useGameObjectName": true,
+                    "components": [],
+                    "x": 540,
+                    "y": 960,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "You missed 3 turns, you will be redirected to home",
+                    "align": "center",
+                    "fontSize": "30px",
+                    "maxLines": 2,
+                    "wordWrapWidth": 1000
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "3cd901c3-7563-412d-9698-365e6828b4ec",
+            "label": "popup_skip_turn",
+            "scope": "CLASS",
+            "components": [],
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "4d1affa1-7dd9-4539-855f-36ae6e348957",
+                    "label": "popup_skip_bg",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 540,
+                    "y": 960,
+                    "scaleX": 9,
+                    "scaleY": 15,
+                    "alpha": 0.8,
+                    "isFilled": true,
+                    "fillColor": "#131313",
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Image",
+                    "id": "aee17eaf-8393-4ae6-ac4f-31930ef13f97",
+                    "label": "popbg",
+                    "components": [],
+                    "texture": {
+                        "key": "Box-Pop-Up"
+                    },
+                    "x": 540,
+                    "y": 960
+                },
+                {
+                    "type": "Image",
+                    "id": "6881a258-dc1e-4bdb-b177-241b27f3cf27",
+                    "label": "btn_skip_okay",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "btn-okay"
+                    },
+                    "x": 540,
+                    "y": 1057
+                },
+                {
+                    "type": "Text",
+                    "id": "3c77324c-d7ee-4b8d-bf8f-da73d062208f",
+                    "label": "txt_13",
+                    "useGameObjectName": true,
+                    "components": [],
+                    "x": 540,
+                    "y": 1054,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "OK",
+                    "align": "center",
+                    "fontSize": "55px",
+                    "maxLines": 2,
+                    "wordWrapWidth": 700
+                },
+                {
+                    "type": "Text",
+                    "id": "f9b9b942-4539-42d0-8964-7a591b7202b0",
+                    "label": "txt_14",
+                    "useGameObjectName": true,
+                    "components": [],
+                    "x": 567,
+                    "y": 901,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Your turn is skipped!",
+                    "align": "center",
+                    "fontSize": "60px",
+                    "maxLines": 2,
+                    "wordWrapWidth": 1000
                 }
             ]
         }

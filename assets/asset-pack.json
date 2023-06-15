@@ -58,6 +58,31 @@
                 "key": "Box-Pop-Up"
             },
             {
+                "url": "assets/images/leave-popup/btn-cancle.png",
+                "type": "image",
+                "key": "btn-cancle"
+            },
+            {
+                "url": "assets/images/leave-popup/btn-confirm.png",
+                "type": "image",
+                "key": "btn-confirm"
+            },
+            {
+                "url": "assets/images/popup/btn-okay.png",
+                "type": "image",
+                "key": "btn-okay"
+            },
+            {
+                "url": "assets/images/settings/close-button.png",
+                "type": "image",
+                "key": "close-button"
+            },
+            {
+                "url": "assets/images/settings/close-icon.png",
+                "type": "image",
+                "key": "close-icon"
+            },
+            {
                 "url": "assets/images/gameplay/dice/dice.png",
                 "frameConfig": {
                     "frameWidth": 170,
@@ -190,9 +215,29 @@
                 "key": "Green-Time-bar-inside-fill"
             },
             {
+                "url": "assets/images/settings/how-to-play-board-button.png",
+                "type": "image",
+                "key": "how-to-play-board-button"
+            },
+            {
                 "url": "src/scripts/InputManager.js",
                 "type": "script",
                 "key": "InputManager"
+            },
+            {
+                "url": "assets/images/settings/leave-game-board.png",
+                "type": "image",
+                "key": "leave-game-board"
+            },
+            {
+                "url": "assets/images/leave-popup/leave-popup-bg.png",
+                "type": "image",
+                "key": "leave-popup-bg"
+            },
+            {
+                "url": "assets/images/popup/life-skip-icon.png",
+                "type": "image",
+                "key": "life-skip-icon"
             },
             {
                 "url": "assets/images/mcq/MCQ-Pop-Up-box.png",
@@ -203,6 +248,21 @@
                 "url": "assets/images/mcq/MCQ-Question-Answer-box.png",
                 "type": "image",
                 "key": "MCQ-Question-Answer-box"
+            },
+            {
+                "url": "assets/images/settings/music-icon.png",
+                "type": "image",
+                "key": "music-icon"
+            },
+            {
+                "url": "assets/images/settings/off-switch.png",
+                "type": "image",
+                "key": "off-switch"
+            },
+            {
+                "url": "assets/images/settings/on-switch.png",
+                "type": "image",
+                "key": "on-switch"
             },
             {
                 "url": "assets/images/gameplay/ping-background.png",
@@ -305,6 +365,16 @@
                 "key": "pot-background"
             },
             {
+                "url": "assets/images/settings/question-icon.png",
+                "type": "image",
+                "key": "question-icon"
+            },
+            {
+                "url": "assets/images/leave-popup/quit-button.png",
+                "type": "image",
+                "key": "quit-button"
+            },
+            {
                 "url": "src/prefabs/Quiz.js",
                 "type": "script",
                 "key": "Quiz"
@@ -381,9 +451,29 @@
                 "key": "setting-button"
             },
             {
+                "url": "assets/images/settings/setting-pop-up.png",
+                "type": "image",
+                "key": "setting-pop-up"
+            },
+            {
+                "url": "assets/images/settings/setting-pop-up-board.png",
+                "type": "image",
+                "key": "setting-pop-up-board"
+            },
+            {
+                "url": "assets/images/leave-popup/snake.png",
+                "type": "image",
+                "key": "snake"
+            },
+            {
                 "url": "src/scripts/SocketManager.js",
                 "type": "script",
                 "key": "SocketManager"
+            },
+            {
+                "url": "assets/images/settings/sound-icon.png",
+                "type": "image",
+                "key": "sound-icon"
             },
             {
                 "url": "src/scripts/SoundManager.js",
