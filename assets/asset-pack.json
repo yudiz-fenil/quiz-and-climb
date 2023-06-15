@@ -129,6 +129,11 @@
                 "key": "GameManager"
             },
             {
+                "url": "assets/images/Result Screen Slicing/Go to home board.png",
+                "type": "image",
+                "key": "Go to home board"
+            },
+            {
                 "url": "assets/images/gameplay/dice/green-bg.png",
                 "type": "image",
                 "key": "green-bg"
@@ -205,6 +210,11 @@
                 "key": "ping-background"
             },
             {
+                "url": "assets/images/Result Screen Slicing/Play-again-board.png",
+                "type": "image",
+                "key": "Play-again-board"
+            },
+            {
                 "url": "assets/animations/player.json",
                 "type": "animation",
                 "key": "player"
@@ -238,6 +248,11 @@
                 "url": "assets/images/gameplay/player-four-heart.png",
                 "type": "image",
                 "key": "player-four-heart"
+            },
+            {
+                "url": "assets/images/Result Screen Slicing/Player-name-board.png",
+                "type": "image",
+                "key": "Player-name-board"
             },
             {
                 "url": "assets/images/gameplay/player-one-background.png",
@@ -346,6 +361,21 @@
                 "key": "Red-Time-bar-fill"
             },
             {
+                "url": "assets/images/Result Screen Slicing/Result-Screen-Board.png",
+                "type": "image",
+                "key": "Result-Screen-Board"
+            },
+            {
+                "url": "assets/images/Result Screen Slicing/Result-Screen-Ref.png",
+                "type": "image",
+                "key": "Result-Screen-Ref"
+            },
+            {
+                "url": "src/prefabs/ResultScreen.js",
+                "type": "script",
+                "key": "ResultScreen"
+            },
+            {
                 "url": "assets/images/gameplay/setting-button.png",
                 "type": "image",
                 "key": "setting-button"
@@ -374,6 +404,21 @@
                 "url": "assets/images/gameplay/dice/timer.png",
                 "type": "image",
                 "key": "timer"
+            },
+            {
+                "url": "assets/images/Result Screen Slicing/Trophy-01.png",
+                "type": "image",
+                "key": "Trophy-01"
+            },
+            {
+                "url": "assets/images/Result Screen Slicing/Trophy-02.png",
+                "type": "image",
+                "key": "Trophy-02"
+            },
+            {
+                "url": "assets/images/Result Screen Slicing/Trophy-03.png",
+                "type": "image",
+                "key": "Trophy-03"
             },
             {
                 "url": "assets/images/mcq/wrong-answer-pop-up.png",

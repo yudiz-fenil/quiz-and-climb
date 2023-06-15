@@ -70,7 +70,7 @@ class Level extends Phaser.Scene {
 		txt_time.name = "txt_time";
 		txt_time.setOrigin(0.5, 0.5);
 		txt_time.text = "00:00";
-		txt_time.setStyle({ "align": "center", "fontSize": "40px", "fontStyle": "bold", "maxLines":2});
+		txt_time.setStyle({ "align": "center", "fontSize": "40px", "fontStyle": "bold", "maxLines": 2 });
 		txt_time.setWordWrapWidth(300);
 		container_menu.add(txt_time);
 
@@ -79,7 +79,7 @@ class Level extends Phaser.Scene {
 		txt_pot.name = "txt_pot";
 		txt_pot.setOrigin(0.5, 0.5);
 		txt_pot.text = "₹ 3.2";
-		txt_pot.setStyle({ "align": "center", "fontSize": "40px", "fontStyle": "bold", "maxLines":2});
+		txt_pot.setStyle({ "align": "center", "fontSize": "40px", "fontStyle": "bold", "maxLines": 2 });
 		txt_pot.setWordWrapWidth(300);
 		container_menu.add(txt_pot);
 
@@ -88,9 +88,85 @@ class Level extends Phaser.Scene {
 		txt.name = "txt";
 		txt.setOrigin(0.5, 0.5);
 		txt.text = "POT";
-		txt.setStyle({ "align": "center", "fontSize": "40px", "fontStyle": "bold", "maxLines":2});
+		txt.setStyle({ "align": "center", "fontSize": "40px", "fontStyle": "bold", "maxLines": 2 });
 		txt.setWordWrapWidth(300);
 		container_menu.add(txt);
+		// container_resultScreen
+		const container_resultScreen = this.add.container(0, 0);
+		container_resultScreen.visible = false;
+
+		// rectangle
+		const rectangle = this.add.rectangle(545, 948, 128, 128);
+		rectangle.scaleX = 9;
+		rectangle.scaleY = 15;
+		rectangle.alpha = 0.8;
+		rectangle.isFilled = true;
+		rectangle.fillColor = 1250067;
+		container_resultScreen.add(rectangle);
+
+		// result_Screen_Board
+		const result_Screen_Board = this.add.image(537, 828, "Result-Screen-Board");
+		result_Screen_Board.scaleX = 1.1;
+		result_Screen_Board.scaleY = 1.1;
+		container_resultScreen.add(result_Screen_Board);
+
+		// play_again_board
+		const play_again_board = this.add.image(516, 1217, "Play-again-board");
+		container_resultScreen.add(play_again_board);
+
+		// goHomeTxt
+		const goHomeTxt = this.add.text(512, 1210, "", {});
+		goHomeTxt.setOrigin(0.5, 0.5);
+		goHomeTxt.text = "GO TO HOME";
+		goHomeTxt.setStyle({ "fontSize": "45px" });
+		container_resultScreen.add(goHomeTxt);
+
+		// container_text1
+		const container_text1 = this.add.container(0, 0);
+		container_resultScreen.add(container_text1);
+
+		// rankTxt
+		const rankTxt = this.add.text(183, 677, "", {});
+		rankTxt.setOrigin(0.5, 0.5);
+		rankTxt.text = "Rank";
+		rankTxt.setStyle({ "fontSize": "45px" });
+		container_text1.add(rankTxt);
+
+		// nameTxt
+		const nameTxt = this.add.text(364, 677, "", {});
+		nameTxt.setOrigin(0.5, 0.5);
+		nameTxt.text = "Name";
+		nameTxt.setStyle({ "fontSize": "45px" });
+		container_text1.add(nameTxt);
+
+		// scoreTxt
+		const scoreTxt = this.add.text(596, 677, "", {});
+		scoreTxt.setOrigin(0.5, 0.5);
+		scoreTxt.text = "Score";
+		scoreTxt.setStyle({ "fontSize": "45px" });
+		container_text1.add(scoreTxt);
+
+		// winningTxt
+		const winningTxt = this.add.text(839, 673, "", {});
+		winningTxt.setOrigin(0.5, 0.5);
+		winningTxt.text = "Winning";
+		winningTxt.setStyle({ "fontSize": "45px" });
+		container_text1.add(winningTxt);
+
+		// trophy_01
+		const trophy_01 = this.add.image(178, 780, "Trophy-01");
+		trophy_01.visible = false;
+		container_resultScreen.add(trophy_01);
+
+		// trophy_02
+		const trophy_02 = this.add.image(174, 897, "Trophy-02");
+		trophy_02.visible = false;
+		container_resultScreen.add(trophy_02);
+
+		// trophy_03
+		const trophy_03 = this.add.image(180, 1012, "Trophy-03");
+		trophy_03.visible = false;
+		container_resultScreen.add(trophy_03);
 
 		this.game = game;
 		this.dice = dice;
@@ -101,6 +177,12 @@ class Level extends Phaser.Scene {
 		this.btn_settings = btn_settings;
 		this.txt_time = txt_time;
 		this.txt_pot = txt_pot;
+		this.container_resultScreen = container_resultScreen;
+		this.goHomeTxt = goHomeTxt;
+		this.container_text1 = container_text1;
+		this.trophy_01 = trophy_01;
+		this.trophy_02 = trophy_02;
+		this.trophy_03 = trophy_03;
 
 		this.events.emit("scene-awake");
 	}
@@ -123,6 +205,18 @@ class Level extends Phaser.Scene {
 	txt_time;
 	/** @type {Phaser.GameObjects.Text} */
 	txt_pot;
+	/** @type {Phaser.GameObjects.Container} */
+	container_resultScreen;
+	/** @type {Phaser.GameObjects.Text} */
+	goHomeTxt;
+	/** @type {Phaser.GameObjects.Container} */
+	container_text1;
+	/** @type {Phaser.GameObjects.Image} */
+	trophy_01;
+	/** @type {Phaser.GameObjects.Image} */
+	trophy_02;
+	/** @type {Phaser.GameObjects.Image} */
+	trophy_03;
 
 	/* START-USER-CODE */
 
@@ -199,6 +293,24 @@ class Level extends Phaser.Scene {
 				nTotalGameTime -= 1000;
 			}
 		}, 1000);
+	}
+	showResultScreen = ({ sortedParticipant }) => {
+		console.log("sorted", sortedParticipant);
+		this.container_resultScreen.visible = true;
+		for (let i = 0; i < sortedParticipant.length; i++) {
+			this.winnerPrefab = this.add.existing(new ResultScreen(this, 587, 737 + (i * 100)));
+			this.container_resultScreen.add(this.winnerPrefab);
+			this.winnerPrefab.setWinnerData(sortedParticipant[i]);
+			if (sortedParticipant.length == 2) {
+				this.trophy_01.visible = true;
+				this.trophy_02.visible = true;
+			} else {
+				this.trophy_01.visible = true;
+				this.trophy_02.visible = true;
+				this.trophy_03.visible = true;
+			}
+		}
+
 	}
 	/* END-USER-CODE */
 }
