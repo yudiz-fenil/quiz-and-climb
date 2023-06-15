@@ -83,6 +83,9 @@ class SocketManager {
       case "resTurnMissed":
         this.oScene.oPlayerManager.setTurnMissed(data.oData);
         break;
+      case "resGameOver":
+        this.oScene.showResultScreen(data.oData);
+        break;
     }
   }
 }

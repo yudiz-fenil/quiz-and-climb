@@ -1,0 +1,81 @@
+{
+    "id": "2f97186b-fc68-4d11-9cb6-a15fc928b74c",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1080,
+        "borderHeight": 1920
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "d4636bcd-4096-4951-b051-e8bb0874c111",
+            "label": "container_1",
+            "components": [],
+            "x": 4,
+            "y": -57,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "f4001df0-6cd2-4b7e-9709-aeb5fc20be32",
+                    "label": "player_name_board",
+                    "components": [],
+                    "texture": {
+                        "key": "Player-name-board"
+                    },
+                    "y": 57,
+                    "scaleX": 0.7,
+                    "scaleY": 0.7
+                },
+                {
+                    "type": "Text",
+                    "id": "72eb7ca8-8419-46c6-84c5-9a5add6ff7ef",
+                    "label": "playerName",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": -241,
+                    "y": 55,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "player!",
+                    "fontSize": "30px"
+                },
+                {
+                    "type": "Text",
+                    "id": "ea195063-9a9e-4d0d-b802-89b612b8210e",
+                    "label": "playerScore",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 34,
+                    "y": 55,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "255",
+                    "fontSize": "30px"
+                },
+                {
+                    "type": "Text",
+                    "id": "3ef6a6c5-23ff-4be6-8829-e7fe8b5af9cb",
+                    "label": "playerWinning",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 248,
+                    "y": 55,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "800",
+                    "fontSize": "30px"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

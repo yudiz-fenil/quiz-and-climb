@@ -198,6 +198,164 @@
                     "wordWrapWidth": 300
                 }
             ]
+        },
+        {
+            "type": "Container",
+            "id": "c2a31df9-61e0-4ddf-b168-a18f3e85d803",
+            "label": "container_resultScreen",
+            "scope": "CLASS",
+            "components": [],
+            "visible": false,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "2a5c29fb-9885-4cba-b33a-54568301048d",
+                    "label": "rectangle",
+                    "components": [],
+                    "x": 545,
+                    "y": 948,
+                    "scaleX": 9,
+                    "scaleY": 15,
+                    "alpha": 0.8,
+                    "isFilled": true,
+                    "fillColor": "#131313",
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Image",
+                    "id": "30b9f2f4-631a-4fbc-b0b1-ff21b5a653ee",
+                    "label": "result_Screen_Board",
+                    "components": [],
+                    "texture": {
+                        "key": "Result-Screen-Board"
+                    },
+                    "x": 537,
+                    "y": 828,
+                    "scaleX": 1.1,
+                    "scaleY": 1.1
+                },
+                {
+                    "type": "Image",
+                    "id": "b8518e0d-1af3-4240-bc69-1b3383a569e4",
+                    "label": "play_again_board",
+                    "components": [],
+                    "texture": {
+                        "key": "Play-again-board"
+                    },
+                    "x": 516,
+                    "y": 1217
+                },
+                {
+                    "type": "Text",
+                    "id": "24bb6b16-52da-4955-b753-93b6ec364d27",
+                    "label": "goHomeTxt",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 512,
+                    "y": 1210,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "GO TO HOME",
+                    "fontSize": "45px"
+                },
+                {
+                    "type": "Container",
+                    "id": "f57d12c2-7d23-4bc6-9088-18280c7201bb",
+                    "label": "container_text1",
+                    "scope": "CLASS",
+                    "components": [],
+                    "list": [
+                        {
+                            "type": "Text",
+                            "id": "ac9e97ee-0be1-4737-a106-6c0050fb106f",
+                            "label": "rankTxt",
+                            "components": [],
+                            "x": 183,
+                            "y": 677,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "Rank",
+                            "fontSize": "45px"
+                        },
+                        {
+                            "type": "Text",
+                            "id": "110d0382-3c07-4f52-9793-f03745e00c60",
+                            "label": "nameTxt",
+                            "components": [],
+                            "x": 364,
+                            "y": 677,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "Name",
+                            "fontSize": "45px"
+                        },
+                        {
+                            "type": "Text",
+                            "id": "767f6207-8623-4d4d-a6c8-6fb8eef95763",
+                            "label": "scoreTxt",
+                            "components": [],
+                            "x": 596,
+                            "y": 677,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "Score",
+                            "fontSize": "45px"
+                        },
+                        {
+                            "type": "Text",
+                            "id": "f476f4ec-cd95-4c62-9b19-74bcdee6fd8d",
+                            "label": "winningTxt",
+                            "components": [],
+                            "x": 839,
+                            "y": 673,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "Winning",
+                            "fontSize": "45px"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "986d1c8d-e390-4b72-a2e6-73e646d4cf04",
+                    "label": "trophy_01",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "Trophy-01"
+                    },
+                    "x": 178,
+                    "y": 780,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "e01cd31d-a41d-4166-8e9e-2bb88b1cc140",
+                    "label": "trophy_02",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "Trophy-02"
+                    },
+                    "x": 174,
+                    "y": 897,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "477f89a8-988d-4fe3-8041-535e989ca076",
+                    "label": "trophy_03",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "Trophy-03"
+                    },
+                    "x": 180,
+                    "y": 1012,
+                    "visible": false
+                }
+            ]
         }
     ],
     "plainObjects": [],
