@@ -70,7 +70,7 @@ class Level extends Phaser.Scene {
 		txt_time.name = "txt_time";
 		txt_time.setOrigin(0.5, 0.5);
 		txt_time.text = "00:00";
-		txt_time.setStyle({ "align": "center", "fontSize": "40px", "fontStyle": "bold", "maxLines":2});
+		txt_time.setStyle({ "align": "center", "fontSize": "40px", "fontStyle": "bold", "maxLines": 2 });
 		txt_time.setWordWrapWidth(300);
 		container_menu.add(txt_time);
 
@@ -79,7 +79,7 @@ class Level extends Phaser.Scene {
 		txt_pot.name = "txt_pot";
 		txt_pot.setOrigin(0.5, 0.5);
 		txt_pot.text = "₹ 3.2";
-		txt_pot.setStyle({ "align": "center", "fontSize": "40px", "fontStyle": "bold", "maxLines":2});
+		txt_pot.setStyle({ "align": "center", "fontSize": "40px", "fontStyle": "bold", "maxLines": 2 });
 		txt_pot.setWordWrapWidth(300);
 		container_menu.add(txt_pot);
 
@@ -88,7 +88,7 @@ class Level extends Phaser.Scene {
 		txt.name = "txt";
 		txt.setOrigin(0.5, 0.5);
 		txt.text = "POT";
-		txt.setStyle({ "align": "center", "fontSize": "40px", "fontStyle": "bold", "maxLines":2});
+		txt.setStyle({ "align": "center", "fontSize": "40px", "fontStyle": "bold", "maxLines": 2 });
 		txt.setWordWrapWidth(300);
 		container_menu.add(txt);
 
@@ -199,7 +199,7 @@ class Level extends Phaser.Scene {
 		txt_1.name = "txt_1";
 		txt_1.setOrigin(0.5, 0.5);
 		txt_1.text = "Setting";
-		txt_1.setStyle({ "align": "center", "fontSize": "40px", "fontStyle": "bold", "maxLines":2});
+		txt_1.setStyle({ "align": "center", "fontSize": "40px", "fontStyle": "bold", "maxLines": 2 });
 		txt_1.setWordWrapWidth(300);
 		popup_settings.add(txt_1);
 
@@ -208,7 +208,7 @@ class Level extends Phaser.Scene {
 		txt_2.name = "txt_2";
 		txt_2.setOrigin(0.5, 0.5);
 		txt_2.text = "Sound";
-		txt_2.setStyle({ "align": "center", "fontSize": "80px", "fontStyle": "bold", "maxLines":2});
+		txt_2.setStyle({ "align": "center", "fontSize": "80px", "fontStyle": "bold", "maxLines": 2 });
 		txt_2.setWordWrapWidth(300);
 		popup_settings.add(txt_2);
 
@@ -217,7 +217,7 @@ class Level extends Phaser.Scene {
 		txt_3.name = "txt_3";
 		txt_3.setOrigin(0.5, 0.5);
 		txt_3.text = "Music";
-		txt_3.setStyle({ "align": "center", "fontSize": "80px", "fontStyle": "bold", "maxLines":2});
+		txt_3.setStyle({ "align": "center", "fontSize": "80px", "fontStyle": "bold", "maxLines": 2 });
 		txt_3.setWordWrapWidth(300);
 		popup_settings.add(txt_3);
 
@@ -246,7 +246,7 @@ class Level extends Phaser.Scene {
 		txt_4.name = "txt_4";
 		txt_4.setOrigin(0.5, 0.5);
 		txt_4.text = "How to play?";
-		txt_4.setStyle({ "align": "center", "fontSize": "55px", "fontStyle": "bold", "maxLines":2});
+		txt_4.setStyle({ "align": "center", "fontSize": "55px", "fontStyle": "bold", "maxLines": 2 });
 		txt_4.setWordWrapWidth(1000);
 		popup_settings.add(txt_4);
 
@@ -263,7 +263,7 @@ class Level extends Phaser.Scene {
 		txt_5.name = "txt_5";
 		txt_5.setOrigin(0.5, 0.5);
 		txt_5.text = "LEAVE GAME";
-		txt_5.setStyle({ "align": "center", "fontSize": "55px", "fontStyle": "bold", "maxLines":2});
+		txt_5.setStyle({ "align": "center", "fontSize": "55px", "fontStyle": "bold", "maxLines": 2 });
 		txt_5.setWordWrapWidth(1000);
 		popup_settings.add(txt_5);
 
@@ -318,7 +318,7 @@ class Level extends Phaser.Scene {
 		txt_6.name = "txt_6";
 		txt_6.setOrigin(0.5, 0.5);
 		txt_6.text = "QUIT";
-		txt_6.setStyle({ "align": "center", "color": "#fbdb00", "fontSize": "80px", "fontStyle": "bold", "maxLines":2});
+		txt_6.setStyle({ "align": "center", "color": "#fbdb00", "fontSize": "80px", "fontStyle": "bold", "maxLines": 2 });
 		txt_6.setWordWrapWidth(1000);
 		popup_leave.add(txt_6);
 
@@ -327,7 +327,7 @@ class Level extends Phaser.Scene {
 		txt_7.name = "txt_7";
 		txt_7.setOrigin(0.5, 0.5);
 		txt_7.text = "Are you sure you want to quit?";
-		txt_7.setStyle({ "align": "center", "fontSize": "60px", "maxLines":2});
+		txt_7.setStyle({ "align": "center", "fontSize": "60px", "maxLines": 2 });
 		txt_7.setWordWrapWidth(700);
 		popup_leave.add(txt_7);
 
@@ -336,7 +336,7 @@ class Level extends Phaser.Scene {
 		txt_8.name = "txt_8";
 		txt_8.setOrigin(0.5, 0.5);
 		txt_8.text = "Yes";
-		txt_8.setStyle({ "align": "center", "fontSize": "60px", "maxLines":2});
+		txt_8.setStyle({ "align": "center", "fontSize": "60px", "maxLines": 2 });
 		txt_8.setWordWrapWidth(1000);
 		popup_leave.add(txt_8);
 
@@ -345,7 +345,7 @@ class Level extends Phaser.Scene {
 		txt_9.name = "txt_9";
 		txt_9.setOrigin(0.5, 0.5);
 		txt_9.text = "No";
-		txt_9.setStyle({ "align": "center", "fontSize": "60px", "maxLines":2});
+		txt_9.setStyle({ "align": "center", "fontSize": "60px", "maxLines": 2 });
 		txt_9.setWordWrapWidth(1000);
 		popup_leave.add(txt_9);
 
@@ -375,7 +375,7 @@ class Level extends Phaser.Scene {
 		txt_10.name = "txt_10";
 		txt_10.setOrigin(0.5, 0.5);
 		txt_10.text = "OK";
-		txt_10.setStyle({ "align": "center", "fontSize": "55px", "maxLines":2});
+		txt_10.setStyle({ "align": "center", "fontSize": "55px", "maxLines": 2 });
 		txt_10.setWordWrapWidth(700);
 		popup_miss_turns.add(txt_10);
 
@@ -384,7 +384,7 @@ class Level extends Phaser.Scene {
 		txt_11.name = "txt_11";
 		txt_11.setOrigin(0.5, 0.5);
 		txt_11.text = "You missed all turns!";
-		txt_11.setStyle({ "align": "center", "fontSize": "60px", "maxLines":2});
+		txt_11.setStyle({ "align": "center", "fontSize": "60px", "maxLines": 2 });
 		txt_11.setWordWrapWidth(1000);
 		popup_miss_turns.add(txt_11);
 
@@ -397,7 +397,7 @@ class Level extends Phaser.Scene {
 		txt_12.name = "txt_12";
 		txt_12.setOrigin(0.5, 0.5);
 		txt_12.text = "You missed 3 turns, you will be redirected to home";
-		txt_12.setStyle({ "align": "center", "fontSize": "30px", "maxLines":2});
+		txt_12.setStyle({ "align": "center", "fontSize": "30px", "maxLines": 2 });
 		txt_12.setWordWrapWidth(1000);
 		popup_miss_turns.add(txt_12);
 
@@ -427,7 +427,7 @@ class Level extends Phaser.Scene {
 		txt_13.name = "txt_13";
 		txt_13.setOrigin(0.5, 0.5);
 		txt_13.text = "OK";
-		txt_13.setStyle({ "align": "center", "fontSize": "55px", "maxLines":2});
+		txt_13.setStyle({ "align": "center", "fontSize": "55px", "maxLines": 2 });
 		txt_13.setWordWrapWidth(700);
 		popup_skip_turn.add(txt_13);
 
@@ -436,9 +436,48 @@ class Level extends Phaser.Scene {
 		txt_14.name = "txt_14";
 		txt_14.setOrigin(0.5, 0.5);
 		txt_14.text = "Your turn is skipped!";
-		txt_14.setStyle({ "align": "center", "fontSize": "60px", "maxLines":2});
+		txt_14.setStyle({ "align": "center", "fontSize": "60px", "maxLines": 2 });
 		txt_14.setWordWrapWidth(1000);
 		popup_skip_turn.add(txt_14);
+
+		// popup_game_finish
+		const popup_game_finish = this.add.container(0, 0);
+		popup_game_finish.visible = false;
+
+		// popup_game_finished_bg
+		const popup_game_finished_bg = this.add.rectangle(540, 960, 128, 128);
+		popup_game_finished_bg.scaleX = 9;
+		popup_game_finished_bg.scaleY = 15;
+		popup_game_finished_bg.alpha = 0.8;
+		popup_game_finished_bg.isFilled = true;
+		popup_game_finished_bg.fillColor = 1250067;
+		popup_game_finish.add(popup_game_finished_bg);
+
+		// popbg_1
+		const popbg_1 = this.add.image(540, 960, "Box-Pop-Up");
+		popup_game_finish.add(popbg_1);
+
+		// btn_game_finished
+		const btn_game_finished = this.add.image(540, 1057, "btn-okay");
+		popup_game_finish.add(btn_game_finished);
+
+		// txt_15
+		const txt_15 = this.add.text(540, 1054, "", {});
+		txt_15.name = "txt_15";
+		txt_15.setOrigin(0.5, 0.5);
+		txt_15.text = "OK";
+		txt_15.setStyle({ "align": "center", "fontSize": "55px", "maxLines": 2 });
+		txt_15.setWordWrapWidth(700);
+		popup_game_finish.add(txt_15);
+
+		// txt_16
+		const txt_16 = this.add.text(540, 913, "", {});
+		txt_16.name = "txt_16";
+		txt_16.setOrigin(0.5, 0.5);
+		txt_16.text = "Game is finished, you will be redirected to home.";
+		txt_16.setStyle({ "align": "center", "fontSize": "60px", "maxLines": 3 });
+		txt_16.setWordWrapWidth(970);
+		popup_game_finish.add(txt_16);
 
 		this.game = game;
 		this.dice = dice;
@@ -468,6 +507,9 @@ class Level extends Phaser.Scene {
 		this.popup_skip_turn = popup_skip_turn;
 		this.popup_skip_bg = popup_skip_bg;
 		this.btn_skip_okay = btn_skip_okay;
+		this.popup_game_finish = popup_game_finish;
+		this.popup_game_finished_bg = popup_game_finished_bg;
+		this.btn_game_finished = btn_game_finished;
 
 		this.events.emit("scene-awake");
 	}
@@ -528,6 +570,12 @@ class Level extends Phaser.Scene {
 	popup_skip_bg;
 	/** @type {Phaser.GameObjects.Image} */
 	btn_skip_okay;
+	/** @type {Phaser.GameObjects.Container} */
+	popup_game_finish;
+	/** @type {Phaser.GameObjects.Rectangle} */
+	popup_game_finished_bg;
+	/** @type {Phaser.GameObjects.Image} */
+	btn_game_finished;
 
 	/* START-USER-CODE */
 
@@ -559,7 +607,7 @@ class Level extends Phaser.Scene {
 			this.oSocketManager.emit("reqLeave");
 			setTimeout(() => {
 				window.close();
-			}, 1000);
+			}, 500);
 		});
 		this.btn_cancle.setInteractive().on('pointerdown', () => {
 			this.popup_leave.setVisible(false);
@@ -583,8 +631,7 @@ class Level extends Phaser.Scene {
 	reqAnswer = (iOptionId) => {
 		this.oSocketManager.emit('reqAnswer', { iOptionId: iOptionId, iQuestionId: this.oQuizeManager.questionId });
 	}
-	reqRollDice = () => this.oSocketManager.emit("reqRollDice", { nDice: nDiceGlobal });
-	// reqRollDice = () => this.oSocketManager.emit("reqRollDice", {});
+	reqRollDice = () => this.oSocketManager.emit("reqRollDice", nDiceGlobal != null ? { nDice: nDiceGlobal } : {});
 	// reqPlayerPosition = (nIndex) => this.oSocketManager.emit("reqPlayerPosition", { nIndex });
 	setQuestonTimer = ({ nTotalTurnTime, ttl }) => {
 		this.timeLeft = nTotalTurnTime / 1000;

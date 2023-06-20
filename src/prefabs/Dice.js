@@ -61,18 +61,22 @@ class Dice extends Phaser.GameObjects.Container {
 			this.oScene.reqRollDice();
 		});
 	}
-	resTurnTimer = (ttl , nTotalTurnTime) => {
+	resTurnTimer = (ttl, nTotalTurnTime) => {
 		this.intervalTimerReset();
 		this.timer.visible = true;
-		let ttl1 = ttl / 1000;
-		let start = 90;
-		let end = 360 / ttl1;
+		let ttl1 = nTotalTurnTime / 1000;
+		let start = -90;
+		let end = 270 / ttl1;
+		console.log('end', end, ttl);
 		let temp = end;
-		let self = this;
+		if (nTotalTurnTime != (ttl)) {
+			end = ((nTotalTurnTime - (ttl)) / 1000) * temp;
+			console.log('refresh end', end);
+		}
 		this.intervalTimer = setInterval(() => {
-			this.shape.slice(this.x,this.y , 128 , Phaser.Math.DegToRad(start),Phaser.Math.DegToRad(start + end)).fill();
-			if(end >= 360){
-				self.intervalTimerReset();
+			this.shape.slice(this.x, this.y, 128, Phaser.Math.DegToRad(start), Phaser.Math.DegToRad(start + end)).fill();
+			if (end >= 360) {
+				this.intervalTimerReset();
 			}
 			end += (temp / 10);
 		}, 100)
