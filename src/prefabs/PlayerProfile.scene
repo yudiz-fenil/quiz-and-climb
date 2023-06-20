@@ -60,7 +60,7 @@
                     "scope": "CLASS",
                     "components": [],
                     "x": -198,
-                    "y": 81,
+                    "y": 75,
                     "originY": 0.5,
                     "text": "username",
                     "fontSize": "26px"

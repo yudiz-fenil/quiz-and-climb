@@ -946,6 +946,87 @@
                     "wordWrapWidth": 1000
                 }
             ]
+        },
+        {
+            "type": "Container",
+            "id": "c543b070-1090-428b-b0ec-c1e15879b589",
+            "label": "popup_game_finish",
+            "scope": "CLASS",
+            "components": [],
+            "visible": false,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "6e8e893e-e6f3-41af-8979-e3f770294bfb",
+                    "label": "popup_game_finished_bg",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 540,
+                    "y": 960,
+                    "scaleX": 9,
+                    "scaleY": 15,
+                    "alpha": 0.8,
+                    "isFilled": true,
+                    "fillColor": "#131313",
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Image",
+                    "id": "0c73bc29-aaac-4a09-9f4e-30844f019f89",
+                    "label": "popbg_1",
+                    "components": [],
+                    "texture": {
+                        "key": "Box-Pop-Up"
+                    },
+                    "x": 540,
+                    "y": 960
+                },
+                {
+                    "type": "Image",
+                    "id": "c8e539c5-4d83-4cd9-b8ba-f80ef7e01a8c",
+                    "label": "btn_game_finished",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "btn-okay"
+                    },
+                    "x": 540,
+                    "y": 1057
+                },
+                {
+                    "type": "Text",
+                    "id": "ea977dd8-4f4e-4d78-80d6-9e277df6ed04",
+                    "label": "txt_15",
+                    "useGameObjectName": true,
+                    "components": [],
+                    "x": 540,
+                    "y": 1054,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "OK",
+                    "align": "center",
+                    "fontSize": "55px",
+                    "maxLines": 2,
+                    "wordWrapWidth": 700
+                },
+                {
+                    "type": "Text",
+                    "id": "455493c7-9f50-40cd-9d59-69f427e5de94",
+                    "label": "txt_16",
+                    "useGameObjectName": true,
+                    "components": [],
+                    "x": 540,
+                    "y": 913,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Game is finished, you will be redirected to home.",
+                    "align": "center",
+                    "fontSize": "60px",
+                    "maxLines": 3,
+                    "wordWrapWidth": 970
+                }
+            ]
         }
     ],
     "plainObjects": [],

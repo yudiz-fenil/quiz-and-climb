@@ -49,7 +49,9 @@ class GameManager {
                 });
             }
         } else {
-            window.close();
+            this.oScene.popup_game_finished_bg.setInteractive().on('pointerdown', () => { });
+            this.oScene.popup_game_finish.setVisible(true);
+            this.oScene.btn_game_finished.setInteractive().on('pointerdown', () => window.close());
         }
     }
 }

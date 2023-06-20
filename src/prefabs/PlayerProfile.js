@@ -25,7 +25,7 @@ class PlayerProfile extends Phaser.GameObjects.Container {
 		this.add(player_picture);
 
 		// text_username
-		const text_username = scene.add.text(-198, 81, "", {});
+		const text_username = scene.add.text(-198, 75, "", {});
 		text_username.setOrigin(0, 0.5);
 		text_username.text = "username";
 		text_username.setStyle({ "fontSize": "26px" });
@@ -148,7 +148,6 @@ class PlayerProfile extends Phaser.GameObjects.Container {
 		this.container_heart.list.forEach((heart) => {
 			heart.setTexture(heartTexture);
 		});
-		console.log('nPawnIndex', nPawnIndex)
 		if (nPawnIndex != -1) {
 			const pawnX = this.oScene.game.container_map_board.list[nPawnIndex].x - this.x
 			const pawnY = this.oScene.game.container_map_board.list[nPawnIndex].y - this.y

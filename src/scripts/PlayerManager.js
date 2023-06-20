@@ -15,10 +15,13 @@ class PlayerManager {
     const iUserId = oBoard.iUserTurn;
     const nTotalTurnTime = turnInfo.nQuestionTTL;
     if (nTotalTurnTime > 0) this.oScene.setQuestonTimer({ nTotalTurnTime });
-    if (turnInfo.nDiceTTL != null){
+    if (turnInfo.nDiceTTL != null) {
+      console.log('turnInfo.nDiceTTL', turnInfo.nDiceTTL);
       this.oScene.dice.resTurnTimer(turnInfo.nDiceTTL);
-      this.oScene.dice.dice.setInteractive();
-      }   
+      if (iUserId == this.player1.name) {
+        this.oScene.dice.dice.setInteractive();
+      }
+    }
     this.oScene.setGameTimer(turnInfo.gameTimerTTL);
     if (turnInfo.nQuestionTTL != null) {
       if (iUserId == this.player1.name) {
@@ -30,7 +33,6 @@ class PlayerManager {
         this.setQuestionTurn({ iUserId })
       }
     }
-
   }
   setUserData = (oData) => {
     if (!this.players.has(oData.iUserId)) {
