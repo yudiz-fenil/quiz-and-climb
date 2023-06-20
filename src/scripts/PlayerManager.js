@@ -8,6 +8,23 @@ class PlayerManager {
     this.player4;
   }
 
+  setPlayerTurn = ({ turnInfo, oBoard, aParticipant }) => {
+    aParticipant.forEach(oUserInfo => {
+      this.setUserData(oUserInfo)
+    });
+    const iUserId = oBoard.iUserTurn;
+    const nTotalTurnTime = turnInfo.nQuestionTTL;
+    if (nTotalTurnTime > 0) this.oScene.setQuestonTimer({ nTotalTurnTime });
+    if (turnInfo.nDiceTTL > 0) this.oScene.dice.resTurnTimer(turnInfo.nDiceTTL);
+    this.oScene.setGameTimer(turnInfo.gameTimerTTL);
+    if (iUserId == this.player1.name) {
+      for (let i = 0; i < this.oScene.quiz.container_optionbtn.list.length; i++) {
+        this.oScene.quiz.container_optionbtn.list[i].setTexture("MCQ-Question-Answer-box");
+      }
+      this.oScene.quiz.setQueAns(oBoard.oCurrentQuestion);
+    }
+    this.setQuestionTurn({ iUserId })
+  }
   setUserData = (oData) => {
     if (!this.players.has(oData.iUserId)) {
       this.players.set(oData.iUserId, oData.sUserName);
@@ -19,11 +36,17 @@ class PlayerManager {
     if (sRootSocket == this.oScene.oSocketManager.socket.id) {
       this.player1 = new PlayerProfile(this.oScene, 223, 1669);
       this.player1.setUsername(sUserName);
-      console.log("%c ownPlayer iUserId", "background: green; ", iUserId);
       this.oScene.oGameManager.ownPlayerId = iUserId;
       this.player1.setHealth(nTurnMissed);
       this.player1.setName(iUserId);
       this.player1.setScore(oScore.nTotalScore);
+      if (aPawn[0] != -1) {
+        const pawnX = this.oScene.game.container_map_board.list[aPawn[0]].x - 223
+        const pawnY = this.oScene.game.container_map_board.list[aPawn[0]].y - 1669
+        this.player1.pawn.setPosition(pawnX, pawnY);
+        this.player1.aPawns[0].position = aPawn[0];
+        this.player1.aPawns[0].finalPosition = aPawn[0];
+      }
       this.oScene.oGameManager.aPawns[0].pawn = this.player1.pawn
       this.oScene.container_players.add(this.player1);
     }
@@ -36,7 +59,7 @@ class PlayerManager {
           this.player2.setName(iUserId);
           this.player2.setHealth(nTurnMissed);
           this.player2.setScore(oScore.nTotalScore);
-          this.player2.setPlayerUI("player-four-background", "player-avtar-02", "player-four-heart", "red-pawn", "red-shadow");
+          this.player2.setPlayerUI("player-four-background", "player-avtar-02", "player-four-heart", "red-pawn", "red-shadow", aPawn[0], 1);
           this.oScene.oGameManager.aPawns[1].pawn = this.player2.pawn
           this.oScene.container_players.add(this.player2);
           break;
@@ -47,7 +70,7 @@ class PlayerManager {
           this.player3.setName(iUserId);
           this.player3.setHealth(nTurnMissed);
           this.player3.setScore(oScore.nTotalScore);
-          this.player3.setPlayerUI("player-three-background", "player-avtar-03", "player-three-heart", "blue-pawn", "blue-shadow");
+          this.player3.setPlayerUI("player-three-background", "player-avtar-03", "player-three-heart", "blue-pawn", "blue-shadow", aPawn[0], 2);
           this.oScene.oGameManager.aPawns[2].pawn = this.player3.pawn
           this.oScene.container_players.add(this.player3);
           break;
@@ -58,7 +81,7 @@ class PlayerManager {
           this.player4.setName(iUserId);
           this.player4.setHealth(nTurnMissed);
           this.player4.setScore(oScore.nTotalScore);
-          this.player4.setPlayerUI("player-two-background", "player-avtar-02", "player-two-heart", "yellow-pawn", "yellow-shadow");
+          this.player4.setPlayerUI("player-two-background", "player-avtar-02", "player-two-heart", "yellow-pawn", "yellow-shadow", aPawn[0], 3);
           this.oScene.oGameManager.aPawns[3].pawn = this.player4.pawn
           this.oScene.container_players.add(this.player4);
           break;
