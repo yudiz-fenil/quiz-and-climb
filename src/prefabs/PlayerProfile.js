@@ -140,7 +140,7 @@ class PlayerProfile extends Phaser.GameObjects.Container {
 		this.text_username.setX(198);
 		this.pawn.setX(-144);
 	};
-	setPlayerUI = (background, profile, heartTexture, pawnTexture, shadowTexture) => {
+	setPlayerUI = (background, profile, heartTexture, pawnTexture, shadowTexture, nPawnIndex, nPLayerIndex) => {
 		this.player_background.setTexture(background);
 		this.player_picture.setTexture(profile);
 		this.pawn.setTexture(pawnTexture);
@@ -148,6 +148,14 @@ class PlayerProfile extends Phaser.GameObjects.Container {
 		this.container_heart.list.forEach((heart) => {
 			heart.setTexture(heartTexture);
 		});
+		console.log('nPawnIndex', nPawnIndex)
+		if (nPawnIndex != -1) {
+			const pawnX = this.oScene.game.container_map_board.list[nPawnIndex].x - this.x
+			const pawnY = this.oScene.game.container_map_board.list[nPawnIndex].y - this.y
+			this.pawn.setPosition(pawnX, pawnY);
+			this.aPawns[nPLayerIndex].position = nPawnIndex
+			this.aPawns[nPLayerIndex].finalPosition = nPawnIndex
+		}
 	};
 	setUsername = (username) => this.text_username.setText(username.length > 17 ? username.slice(0, 16) + "..." : username);
 	setScore = (score) => this.text_score.setText(score);

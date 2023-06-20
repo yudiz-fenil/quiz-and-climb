@@ -50,7 +50,7 @@ class SocketManager {
 
   onReceivedTableData(data) {
     console.log('cb', data);
-    this.oScene.oGameManager.setGameData(data.oData);
+    if (data.oData.eState != "playing") this.oScene.oGameManager.setGameData(data.oData);
   }
 
   onReceivedData(data) {
@@ -62,7 +62,10 @@ class SocketManager {
       case "resGameInitializeTimer":
         break;
       case "resGameInitializeTimerExpired":
-        this.oScene.setGameTimer(data.oData);
+        this.oScene.setGameTimer(data.oData.nTotalGameTime);
+        break;
+      case "resPlayerTurn":
+        this.oScene.oPlayerManager.setPlayerTurn(data.oData);
         break;
       case "resQuestionTurn":
         this.oScene.oPlayerManager.setQuestionTurn(data.oData);

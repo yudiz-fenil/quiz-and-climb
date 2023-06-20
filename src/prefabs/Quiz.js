@@ -67,7 +67,7 @@ class Quiz extends Phaser.GameObjects.Container {
 		option_1.name = "option_1";
 		option_1.setOrigin(0.5, 0.5);
 		option_1.text = "option 1";
-		option_1.setStyle({ "align": "center", "fontSize": "35px", "fontStyle": "bold", "maxLines":2});
+		option_1.setStyle({ "align": "center", "fontSize": "35px", "fontStyle": "bold", "maxLines": 2 });
 		option_1.setWordWrapWidth(300, true);
 		this.add(option_1);
 
@@ -76,7 +76,7 @@ class Quiz extends Phaser.GameObjects.Container {
 		option_2.name = "option_2";
 		option_2.setOrigin(0.5, 0.5);
 		option_2.text = "option2";
-		option_2.setStyle({ "align": "center", "fontSize": "35px", "fontStyle": "bold", "maxLines":2});
+		option_2.setStyle({ "align": "center", "fontSize": "35px", "fontStyle": "bold", "maxLines": 2 });
 		option_2.setWordWrapWidth(300, true);
 		this.add(option_2);
 
@@ -85,7 +85,7 @@ class Quiz extends Phaser.GameObjects.Container {
 		option_3.name = "option_3";
 		option_3.setOrigin(0.5, 0.5);
 		option_3.text = "option3";
-		option_3.setStyle({ "align": "center", "fontSize": "35px", "fontStyle": "bold", "maxLines":2});
+		option_3.setStyle({ "align": "center", "fontSize": "35px", "fontStyle": "bold", "maxLines": 2 });
 		option_3.setWordWrapWidth(300, true);
 		this.add(option_3);
 
@@ -94,7 +94,7 @@ class Quiz extends Phaser.GameObjects.Container {
 		option_4.name = "option_4";
 		option_4.setOrigin(0.5, 0.5);
 		option_4.text = "option4";
-		option_4.setStyle({ "align": "center", "fontSize": "35px", "fontStyle": "bold", "maxLines":2});
+		option_4.setStyle({ "align": "center", "fontSize": "35px", "fontStyle": "bold", "maxLines": 2 });
 		option_4.setWordWrapWidth(300, true);
 		this.add(option_4);
 
@@ -143,7 +143,7 @@ class Quiz extends Phaser.GameObjects.Container {
 	/* START-USER-CODE */
 
 	// Write your code here.
-	setQueAns = ({ iUserId, question }) => {
+	setQueAns = (question) => {
 		this.scene.oQuizeManager.questionId = question._id;
 		this.queTxt.text = question.sQuestion;
 		(this.queTxt.text.length > 30) ? this.queTxt.setScale(0.7) : this.queTxt.setScale(1);

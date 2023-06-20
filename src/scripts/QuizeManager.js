@@ -7,10 +7,10 @@ class QuizeManager {
         for (let i = 0; i < this.oScene.quiz.container_optionbtn.list.length; i++) {
             this.oScene.quiz.container_optionbtn.list[i].setTexture("MCQ-Question-Answer-box");
         }
-        this.oScene.quiz.setQueAns(data);
+        this.oScene.quiz.setQueAns(data.question);
     }
     resAnswer = ({ question, selected, iUserId, oScore }) => {
-        this.oScene.gameTimer.destroy();
+        if (this.oScene.gameTimer) this.oScene.gameTimer.destroy();
         this.oScene.oPlayerManager.setTotalScore(iUserId, oScore);
         this.oScene.quiz.container_optionbtn.list[selected - 1].setTexture("wrong-answer-pop-up");
         this.oScene.quiz.container_optionbtn.list[question.correct_answer - 1].setTexture("Green-Box-answer-");

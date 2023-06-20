@@ -731,12 +731,12 @@
                     "useGameObjectName": true,
                     "components": [],
                     "x": 390,
-                    "y": 1046,
+                    "y": 1043,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Yes",
                     "align": "center",
-                    "fontSize": "80px",
+                    "fontSize": "60px",
                     "maxLines": 2,
                     "wordWrapWidth": 1000
                 },
@@ -747,12 +747,12 @@
                     "useGameObjectName": true,
                     "components": [],
                     "x": 690,
-                    "y": 1046,
+                    "y": 1043,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "No",
                     "align": "center",
-                    "fontSize": "80px",
+                    "fontSize": "60px",
                     "maxLines": 2,
                     "wordWrapWidth": 1000
                 }
@@ -872,6 +872,7 @@
             "label": "popup_skip_turn",
             "scope": "CLASS",
             "components": [],
+            "visible": false,
             "list": [
                 {
                     "type": "Rectangle",
